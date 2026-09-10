@@ -58,17 +58,38 @@ require_once __DIR__ . '/includes/header.php';
               <!-- Graphic / Architecture Mock -->
               <div style="background: rgba(6, 9, 14, 0.75); border: 1px solid var(--border-glass); border-radius: var(--radius-lg); padding: 32px; display: flex; flex-direction: column; gap: 16px;">
                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px;">
-                  <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">Architecture Spec</span>
+                  <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">
+                    <?php echo $svc['id'] === 'mobile-app-development' ? 'Flagship Mobile Architecture' : 'Architecture Spec'; ?>
+                  </span>
                   <span style="font-size: 0.75rem; color: #10b981; font-weight: 600;">Production Verified</span>
                 </div>
-                <div style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6;">
-                  Built to scale from day one. Includes enterprise-grade security protocols, end-to-end automated testing, and CI/CD deployment pipelines.
-                </div>
+                <?php if ($svc['id'] === 'mobile-app-development'): ?>
+                  <div style="border-radius: var(--radius-md); overflow: hidden; height: 160px; position: relative;">
+                    <img src="/assets/images/portfolio/wheely-mockup.jpg" alt="Mobile App Architecture" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,9,14,0.1) 0%, rgba(6,9,14,0.8) 100%);"></div>
+                    <div style="position: absolute; bottom: 10px; left: 14px; font-size: 0.8rem; font-weight: 700; color: #fff;">
+                      Powers Flagship Apps with 500K+ Users
+                    </div>
+                  </div>
+                <?php else: ?>
+                  <div style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6;">
+                    Built to scale from day one. Includes enterprise-grade security protocols, end-to-end automated testing, and CI/CD deployment pipelines.
+                  </div>
+                <?php endif; ?>
                 <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
-                  <span class="p-tag">Multi-Cloud Ready</span>
-                  <span class="p-tag">GDPR Compliant</span>
-                  <span class="p-tag">REST / GraphQL</span>
-                  <span class="p-tag">Zero Downtime</span>
+                  <?php if ($svc['id'] === 'mobile-app-development'): ?>
+                    <span class="p-tag">🍎 Swift / iOS</span>
+                    <span class="p-tag">🤖 Kotlin / Android</span>
+                    <span class="p-tag">💙 Flutter (120fps)</span>
+                    <span class="p-tag">⚛️ React Native</span>
+                    <span class="p-tag">⚡ WebSockets</span>
+                    <span class="p-tag">🔒 Biometrics</span>
+                  <?php else: ?>
+                    <span class="p-tag">Multi-Cloud Ready</span>
+                    <span class="p-tag">GDPR Compliant</span>
+                    <span class="p-tag">REST / GraphQL</span>
+                    <span class="p-tag">Zero Downtime</span>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>

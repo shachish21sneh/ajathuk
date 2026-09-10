@@ -188,14 +188,32 @@ require_once __DIR__ . '/config.php';
         <h3 id="modal-project-title" style="margin-top: 6px; font-size: 1.6rem; color: #fff;">Project Details</h3>
       </div>
 
-      <p id="modal-project-desc" style="font-size: 1rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 20px;"></p>
+      <img id="modal-project-img" src="" alt="Case Study Preview" style="width: 100%; height: 210px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 18px; border: 1px solid var(--border-glass);">
 
-      <div style="background: rgba(0, 240, 255, 0.05); border: 1px solid rgba(0, 240, 255, 0.2); border-radius: var(--radius-md); padding: 16px; margin-bottom: 24px;">
-        <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; margin-bottom: 4px;">Delivered Impact & Metrics</div>
-        <div id="modal-project-metrics" style="font-size: 1.1rem; font-weight: 700; color: #fff;"></div>
+      <p id="modal-project-desc" style="font-size: 0.98rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 18px;"></p>
+
+      <!-- Deep Dive Blocks -->
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
+        <div id="modal-project-problem-wrap">
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: #f87171; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px;">The Challenge</div>
+          <p id="modal-project-problem" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.55; margin: 0;"></p>
+        </div>
+        <div id="modal-project-solution-wrap">
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px;">The Engineering Solution</div>
+          <p id="modal-project-solution" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.55; margin: 0;"></p>
+        </div>
+        <div id="modal-project-impact-wrap">
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: #34d399; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px;">Measurable Outcome</div>
+          <p id="modal-project-impact" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.55; margin: 0;"></p>
+        </div>
       </div>
 
-      <div style="margin-bottom: 28px;">
+      <div style="background: rgba(0, 240, 255, 0.05); border: 1px solid rgba(0, 240, 255, 0.2); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px;">Delivered Impact & Metrics</div>
+        <div id="modal-project-metrics" style="font-size: 1.05rem; font-weight: 700; color: #fff;"></div>
+      </div>
+
+      <div style="margin-bottom: 24px;">
         <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; margin-bottom: 10px;">Technologies Deployed</div>
         <div id="modal-project-tags" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
       </div>

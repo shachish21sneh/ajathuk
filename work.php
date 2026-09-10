@@ -35,25 +35,13 @@ require_once __DIR__ . '/includes/header.php';
           <div class="glass-card project-card" data-category="<?php echo htmlspecialchars($project['category']); ?>">
             <div class="project-preview">
               <span class="project-badge-float"><?php echo htmlspecialchars($project['category_label']); ?></span>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px;">
-                <div style="width: 70px; height: 70px; border-radius: 20px; background: radial-gradient(circle, <?php echo $project['color']; ?>33 0%, rgba(0,0,0,0.5) 100%); border: 1px solid <?php echo $project['color']; ?>88; display: flex; align-items: center; justify-content: center;">
-                  <?php if ($project['mockup_type'] === 'health'): ?>
-                    <span style="font-size: 32px;">🩺</span>
-                  <?php elseif ($project['mockup_type'] === 'fintech'): ?>
-                    <span style="font-size: 32px;">💳</span>
-                  <?php elseif ($project['mockup_type'] === 'agent'): ?>
-                    <span style="font-size: 32px;">🤖</span>
-                  <?php elseif ($project['mockup_type'] === 'logistics'): ?>
-                    <span style="font-size: 32px;">🚚</span>
-                  <?php elseif ($project['mockup_type'] === 'document'): ?>
-                    <span style="font-size: 32px;">📑</span>
-                  <?php else: ?>
-                    <span style="font-size: 32px;">💻</span>
-                  <?php endif; ?>
-                </div>
-                <div style="font-size: 0.85rem; color: #e2e8f0; font-weight: 700;"><?php echo htmlspecialchars($project['name']); ?></div>
-              </div>
+              <img src="<?php echo htmlspecialchars($project['image']); ?>" 
+                   alt="<?php echo htmlspecialchars($project['name']); ?>" 
+                   class="project-preview-img" 
+                   loading="lazy" 
+                   width="600" 
+                   height="338">
+              <div class="project-preview-overlay"></div>
             </div>
 
             <div class="project-body">
@@ -75,10 +63,14 @@ require_once __DIR__ . '/includes/header.php';
                       style="width: 100%;"
                       data-project-details
                       data-title="<?php echo htmlspecialchars($project['name']); ?>"
+                      data-client="<?php echo htmlspecialchars($project['client']); ?>"
                       data-desc="<?php echo htmlspecialchars($project['summary']); ?>"
+                      data-image="<?php echo htmlspecialchars($project['image']); ?>"
+                      data-problem="<?php echo htmlspecialchars($project['problem'] ?? ''); ?>"
+                      data-solution="<?php echo htmlspecialchars($project['solution'] ?? ''); ?>"
+                      data-impact="<?php echo htmlspecialchars($project['impact'] ?? ''); ?>"
                       data-tags="<?php echo htmlspecialchars(implode(', ', $project['tags'])); ?>"
-                      data-metrics="<?php echo htmlspecialchars($project['metrics']); ?>"
-                      data-client="<?php echo htmlspecialchars($project['client']); ?>">
+                      data-metrics="<?php echo htmlspecialchars($project['metrics']); ?>">
                 <span>View Full Case Study</span>
                 <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </button>

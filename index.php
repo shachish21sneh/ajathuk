@@ -449,26 +449,13 @@ require_once __DIR__ . '/includes/header.php';
             <div class="glass-card project-card" data-category="<?php echo htmlspecialchars($project['category']); ?>">
               <div class="project-preview">
                 <span class="project-badge-float"><?php echo htmlspecialchars($project['category_label']); ?></span>
-                
-                <!-- Mockup Graphic Representation -->
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px;">
-                  <div style="width: 70px; height: 70px; border-radius: 20px; background: radial-gradient(circle, <?php echo $project['color']; ?>33 0%, rgba(0,0,0,0.5) 100%); border: 1px solid <?php echo $project['color']; ?>88; display: flex; align-items: center; justify-content: center;">
-                    <?php if ($project['mockup_type'] === 'health'): ?>
-                      <span style="font-size: 32px;">🩺</span>
-                    <?php elseif ($project['mockup_type'] === 'fintech'): ?>
-                      <span style="font-size: 32px;">💳</span>
-                    <?php elseif ($project['mockup_type'] === 'agent'): ?>
-                      <span style="font-size: 32px;">🤖</span>
-                    <?php elseif ($project['mockup_type'] === 'logistics'): ?>
-                      <span style="font-size: 32px;">🚚</span>
-                    <?php elseif ($project['mockup_type'] === 'document'): ?>
-                      <span style="font-size: 32px;">📑</span>
-                    <?php else: ?>
-                      <span style="font-size: 32px;">💻</span>
-                    <?php endif; ?>
-                  </div>
-                  <div style="font-size: 0.85rem; color: #e2e8f0; font-weight: 700;"><?php echo htmlspecialchars($project['name']); ?></div>
-                </div>
+                <img src="<?php echo htmlspecialchars($project['image']); ?>" 
+                     alt="<?php echo htmlspecialchars($project['name']); ?>" 
+                     class="project-preview-img" 
+                     loading="lazy" 
+                     width="600" 
+                     height="338">
+                <div class="project-preview-overlay"></div>
               </div>
 
               <div class="project-body">
@@ -490,11 +477,15 @@ require_once __DIR__ . '/includes/header.php';
                         style="width: 100%;"
                         data-project-details
                         data-title="<?php echo htmlspecialchars($project['name']); ?>"
+                        data-client="<?php echo htmlspecialchars($project['client']); ?>"
                         data-desc="<?php echo htmlspecialchars($project['summary']); ?>"
+                        data-image="<?php echo htmlspecialchars($project['image']); ?>"
+                        data-problem="<?php echo htmlspecialchars($project['problem'] ?? ''); ?>"
+                        data-solution="<?php echo htmlspecialchars($project['solution'] ?? ''); ?>"
+                        data-impact="<?php echo htmlspecialchars($project['impact'] ?? ''); ?>"
                         data-tags="<?php echo htmlspecialchars(implode(', ', $project['tags'])); ?>"
-                        data-metrics="<?php echo htmlspecialchars($project['metrics']); ?>"
-                        data-client="<?php echo htmlspecialchars($project['client']); ?>">
-                  <span>View Project</span>
+                        data-metrics="<?php echo htmlspecialchars($project['metrics']); ?>">
+                  <span>View Case Study</span>
                   <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </button>
               </div>
@@ -519,100 +510,100 @@ require_once __DIR__ . '/includes/header.php';
 
         <!-- 3-5 Smartphone Mockups with Realistic Application Screens -->
         <div class="phone-mockups-carousel">
-          <!-- Phone 1: AI Health & Telemedicine -->
+          <!-- Phone 1: Wheely Luxury Mobility -->
           <div class="phone-device-wrapper">
             <div class="phone-frame">
               <div class="phone-island"></div>
               <div class="phone-screen">
                 <div class="mock-app-header">
-                  <div style="font-weight:700; font-size:0.85rem; color:#fff;">NeuroPulse AI</div>
-                  <div style="width:8px; height:8px; border-radius:50%; background:#10b981;"></div>
+                  <div style="font-weight:700; font-size:0.85rem; color:#fff;">Wheely Chauffeur</div>
+                  <div style="width:8px; height:8px; border-radius:50%; background:#d4af37;"></div>
                 </div>
                 <div class="mock-app-body">
-                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(0,240,255,0.15), rgba(59,130,246,0.1)); border-color: rgba(0,240,255,0.3);">
-                    <div style="font-size:0.75rem; color:var(--accent-cyan); font-weight:600;">Daily Health Score</div>
-                    <div style="font-size:1.6rem; font-weight:800; color:#fff;">98 / 100</div>
-                    <div style="font-size:0.72rem; color:#94a3b8;">Normal HRV • Optimal Recovery</div>
+                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(0,0,0,0.5)); border-color: rgba(212,175,55,0.4);">
+                    <div style="font-size:0.75rem; color:#fef08a; font-weight:600;">Executive Ride Active</div>
+                    <div style="font-size:1.3rem; font-weight:800; color:#fff;">Mayfair, London W1</div>
+                    <div style="font-size:0.72rem; color:#94a3b8;">Mercedes E-Class • Chauffeur Arthur</div>
                   </div>
                   <div class="mock-card">
-                    <div style="font-size:0.75rem; color:#cbd5e1; font-weight:600; margin-bottom:4px;">AI Triage Assistant</div>
-                    <div style="font-size:0.72rem; color:#94a3b8;">“Vitals look optimal. No anomalies detected in 72 hours.”</div>
+                    <div style="font-size:0.75rem; color:#cbd5e1; font-weight:600; margin-bottom:4px;">Sub-30s Dispatch</div>
+                    <div style="font-size:0.72rem; color:#94a3b8;">Flight BA-1492 synced. Chauffeur staged at Heathrow Terminal 5.</div>
                   </div>
-                  <div class="mock-card" style="background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.25);">
-                    <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:#34d399; font-weight:600;">
-                      <span>Telehealth Connect</span>
-                      <span>Connected</span>
+                  <div class="mock-card" style="background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.25);">
+                    <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:#fde047; font-weight:600;">
+                      <span>500K+ Completed Rides</span>
+                      <span>4.9★ Rated</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <h4 class="phone-label-title">HealthTech & Telehealth</h4>
-            <p class="phone-label-desc">Biometric Sync • AI Symptom Triage</p>
+            <h4 class="phone-label-title">Wheely Mobility</h4>
+            <p class="phone-label-desc">On-Demand Chauffeur • GPS Telemetry</p>
           </div>
 
-          <!-- Phone 2: FinTech & Multi-Currency Banking -->
+          <!-- Phone 2: Neo Stox FinTech & Trading -->
           <div class="phone-device-wrapper">
             <div class="phone-frame">
               <div class="phone-island"></div>
               <div class="phone-screen">
                 <div class="mock-app-header">
-                  <div style="font-weight:700; font-size:0.85rem; color:#fff;">ApexPay Global</div>
-                  <div style="font-size:0.75rem; color:#3b82f6; font-weight:700;">PRO</div>
+                  <div style="font-weight:700; font-size:0.85rem; color:#fff;">Neo Stox Pro</div>
+                  <div style="font-size:0.75rem; color:#10b981; font-weight:700;">LIVE FEED</div>
                 </div>
                 <div class="mock-app-body">
-                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.15)); border-color: rgba(59,130,246,0.4);">
-                    <div style="font-size:0.75rem; color:#93c5fd; font-weight:600;">Total Balance (GBP)</div>
-                    <div style="font-size:1.6rem; font-weight:800; color:#fff;">£48,290.40</div>
-                    <div style="font-size:0.72rem; color:#34d399;">+14.8% vs last month</div>
+                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(6,182,212,0.15)); border-color: rgba(16,185,129,0.4);">
+                    <div style="font-size:0.75rem; color:#a7f3d0; font-weight:600;">Portfolio Equity (P&L)</div>
+                    <div style="font-size:1.6rem; font-weight:800; color:#fff;">+28.4%</div>
+                    <div style="font-size:0.72rem; color:#34d399;">Sub-100ms WebSocket Order Depth</div>
                   </div>
                   <div class="mock-card">
-                    <div style="font-size:0.75rem; color:#cbd5e1; font-weight:600; margin-bottom:6px;">Instant Transfer</div>
+                    <div style="font-size:0.75rem; color:#cbd5e1; font-weight:600; margin-bottom:6px;">TradingView Charts</div>
                     <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:#94a3b8;">
-                      <span>Acme Europe Ltd</span>
-                      <span style="color:#fff; font-weight:600;">€4,500.00</span>
+                      <span>SPX 4700 Call Option</span>
+                      <span style="color:#10b981; font-weight:600;">$14.80 (+8.2%)</span>
                     </div>
                   </div>
                   <div class="mock-card">
-                    <div style="font-size:0.72rem; color:#c084fc; font-weight:600;">AI Fraud Sentinel: 100% Protected</div>
+                    <div style="font-size:0.72rem; color:#38bdf8; font-weight:600;">750K+ Active Market Traders</div>
                   </div>
                 </div>
               </div>
             </div>
-            <h4 class="phone-label-title">FinTech & Payments</h4>
-            <p class="phone-label-desc">Real-time Remittance • Biometrics</p>
+            <h4 class="phone-label-title">Neo Stox Terminal</h4>
+            <p class="phone-label-desc">Real-Time Simulator • Zero Lag</p>
           </div>
 
-          <!-- Phone 3: On-Demand Logistics & Delivery -->
+          <!-- Phone 3: Easy Food Hyperlocal Delivery -->
           <div class="phone-device-wrapper">
             <div class="phone-frame">
               <div class="phone-island"></div>
               <div class="phone-screen">
                 <div class="mock-app-header">
-                  <div style="font-weight:700; font-size:0.85rem; color:#fff;">OptiRoute Driver</div>
-                  <div style="font-size:0.75rem; color:#10b981; font-weight:700;">LIVE</div>
+                  <div style="font-weight:700; font-size:0.85rem; color:#fff;">Easy Food</div>
+                  <div style="font-size:0.75rem; color:#f97316; font-weight:700;">ON ROUTE</div>
                 </div>
                 <div class="mock-app-body">
-                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(0,240,255,0.1)); border-color: rgba(16,185,129,0.3);">
-                    <div style="font-size:0.75rem; color:#34d399; font-weight:600;">Next Waypoint</div>
-                    <div style="font-size:1.1rem; font-weight:800; color:#fff;">Northolt, London UB5</div>
-                    <div style="font-size:0.72rem; color:#94a3b8;">ETA: 14 mins • 4.2 miles</div>
+                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(249,115,22,0.18), rgba(0,0,0,0.4)); border-color: rgba(249,115,22,0.35);">
+                    <div style="font-size:0.75rem; color:#fdba74; font-weight:600;">Courier Tracking</div>
+                    <div style="font-size:1.1rem; font-weight:800; color:#fff;">ETA: 12 Mins</div>
+                    <div style="font-size:0.72rem; color:#cbd5e1;">Artisan Neapolitan Pizza & Bowls</div>
                   </div>
                   <div class="mock-card">
-                    <div style="font-size:0.75rem; color:#cbd5e1; font-weight:600; margin-bottom:4px;">Dynamic Dispatch</div>
-                    <div style="font-size:0.72rem; color:#94a3b8;">AI Route Engine recalculated to avoid M25 congestion.</div>
+                    <div style="font-size:0.75rem; color:#cbd5e1; font-weight:600; margin-bottom:4px;">Smart Dispatch Engine</div>
+                    <div style="font-size:0.72rem; color:#94a3b8;">Batch routing reduced delivery window by 35%.</div>
                   </div>
                   <div class="mock-card">
                     <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:#cbd5e1;">
-                      <span>Deliveries Completed</span>
-                      <span style="color:#00f0ff; font-weight:700;">28 / 30</span>
+                      <span>Delivered Orders</span>
+                      <span style="color:#f97316; font-weight:700;">1.2M+ Orders</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <h4 class="phone-label-title">Logistics & Tracking</h4>
-            <p class="phone-label-desc">Live Mapbox • Push Notifications</p>
+            <h4 class="phone-label-title">Easy Food Delivery</h4>
+            <p class="phone-label-desc">Hyperlocal Tracking • 3-Sided App</p>
           </div>
         </div>
 

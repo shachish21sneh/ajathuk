@@ -220,11 +220,58 @@ function initModals() {
         const tags = btn.getAttribute('data-tags');
         const metrics = btn.getAttribute('data-metrics');
         const client = btn.getAttribute('data-client');
+        const image = btn.getAttribute('data-image');
+        const problem = btn.getAttribute('data-problem');
+        const solution = btn.getAttribute('data-solution');
+        const impact = btn.getAttribute('data-impact');
 
-        document.getElementById('modal-project-title').textContent = title;
-        document.getElementById('modal-project-client').textContent = client;
-        document.getElementById('modal-project-desc').textContent = desc;
-        document.getElementById('modal-project-metrics').textContent = metrics;
+        document.getElementById('modal-project-title').textContent = title || 'Project Details';
+        document.getElementById('modal-project-client').textContent = client || 'Enterprise Case Study';
+        document.getElementById('modal-project-desc').textContent = desc || '';
+        document.getElementById('modal-project-metrics').textContent = metrics || '';
+
+        const imgEl = document.getElementById('modal-project-img');
+        if (imgEl) {
+          if (image) {
+            imgEl.src = image;
+            imgEl.style.display = 'block';
+          } else {
+            imgEl.style.display = 'none';
+          }
+        }
+
+        const probEl = document.getElementById('modal-project-problem');
+        const probWrap = document.getElementById('modal-project-problem-wrap');
+        if (probEl && probWrap) {
+          if (problem) {
+            probEl.textContent = problem;
+            probWrap.style.display = 'block';
+          } else {
+            probWrap.style.display = 'none';
+          }
+        }
+
+        const solEl = document.getElementById('modal-project-solution');
+        const solWrap = document.getElementById('modal-project-solution-wrap');
+        if (solEl && solWrap) {
+          if (solution) {
+            solEl.textContent = solution;
+            solWrap.style.display = 'block';
+          } else {
+            solWrap.style.display = 'none';
+          }
+        }
+
+        const impEl = document.getElementById('modal-project-impact');
+        const impWrap = document.getElementById('modal-project-impact-wrap');
+        if (impEl && impWrap) {
+          if (impact) {
+            impEl.textContent = impact;
+            impWrap.style.display = 'block';
+          } else {
+            impWrap.style.display = 'none';
+          }
+        }
 
         const tagContainer = document.getElementById('modal-project-tags');
         if (tagContainer && tags) {
