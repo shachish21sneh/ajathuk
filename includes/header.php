@@ -23,7 +23,10 @@ $ogLocale = $ogLocale ?? 'en_GB';
 $ogType = $ogType ?? 'website';
 $ogTitle = $ogTitle ?? $pageTitle;
 $ogDescription = $ogDescription ?? $pageDescription;
-$ogImage = $ogImage ?? (SITE_URL . LOGO_URL);
+$ogImage = $ogImage ?? (SITE_URL . (defined('OG_IMAGE_URL') ? OG_IMAGE_URL : '/assets/images/og-share.png'));
+$ogImageWidth = $ogImageWidth ?? 600;
+$ogImageHeight = $ogImageHeight ?? 600;
+$ogImageType = $ogImageType ?? 'image/png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,15 +47,23 @@ $ogImage = $ogImage ?? (SITE_URL . LOGO_URL);
   <meta name="theme-color" content="<?php echo defined('SITE_THEME_COLOR') ? SITE_THEME_COLOR : '#188DE1'; ?>">
   <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:locale" content="<?php echo htmlspecialchars($ogLocale); ?>">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:type" content="<?php echo htmlspecialchars($ogType); ?>">
+  <!-- Open Graph / WhatsApp / Facebook / LinkedIn Social Share Preview -->
+  <meta property="og:site_name" content="<?php echo htmlspecialchars(SITE_NAME); ?>">
   <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle); ?>">
   <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription); ?>">
   <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
+  <meta property="og:type" content="<?php echo htmlspecialchars($ogType); ?>">
+  <meta property="og:locale" content="<?php echo htmlspecialchars($ogLocale); ?>">
+  <meta property="og:locale:alternate" content="en_US">
   <meta property="og:image" content="<?php echo htmlspecialchars($ogImage); ?>">
-  <meta property="og:site_name" content="<?php echo htmlspecialchars(SITE_NAME); ?>">
+  <meta property="og:image:secure_url" content="<?php echo htmlspecialchars($ogImage); ?>">
+  <meta property="og:image:type" content="<?php echo htmlspecialchars($ogImageType); ?>">
+  <meta property="og:image:width" content="<?php echo htmlspecialchars($ogImageWidth); ?>">
+  <meta property="og:image:height" content="<?php echo htmlspecialchars($ogImageHeight); ?>">
+  <meta property="og:image:alt" content="<?php echo htmlspecialchars(SITE_NAME); ?>">
+
+  <!-- Legacy & Messenger Preview Image Fallback -->
+  <link rel="image_src" href="<?php echo htmlspecialchars($ogImage); ?>">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -60,12 +71,11 @@ $ogImage = $ogImage ?? (SITE_URL . LOGO_URL);
   <meta name="twitter:description" content="<?php echo htmlspecialchars($ogDescription); ?>">
   <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage); ?>">
 
-  <!-- Favicons & Touch Icons -->
-  <link rel="apple-touch-icon" href="<?php echo SITE_URL; ?><?php echo LOGO_URL; ?>">
-  <link rel="shortcut icon" href="<?php echo FAVICON_URL; ?>" type="image/webp">
-  <link rel="icon" href="<?php echo FAVICON_URL; ?>" type="image/webp" sizes="16x16">
-  <link rel="icon" href="<?php echo FAVICON_URL; ?>" type="image/webp" sizes="32x32">
-  <link rel="icon" href="<?php echo FAVICON_URL; ?>" type="image/webp" sizes="192x192">
+  <!-- Favicons & Touch Icons (High-Compatibility PNG) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" type="image/png" href="/assets/images/favicon-ajath.png">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=1.1">
