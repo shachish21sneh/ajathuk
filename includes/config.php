@@ -23,6 +23,16 @@ define('COMPANY_MAPS_URL', 'https://maps.app.goo.gl/8zTaWyddYztiCVtw8?g_st=awb')
 define('LOGO_URL', '/assets/images/ajath-logo-white.webp');
 define('FAVICON_URL', '/assets/images/favicon-ajath.webp');
 
+// SMTP Mail Settings
+define('SMTP_HOST', 'ssl://mail.ajath.uk');
+define('SMTP_PORT', 465);
+define('SMTP_USER', 'info@ajath.uk');
+define('SMTP_PASS', 'Ajath@123');
+define('SMTP_FROM_EMAIL', 'info@ajath.uk');
+define('SMTP_FROM_NAME', 'Ajath Infotech Inquiries');
+define('ENQUIRY_RECIPIENTS', ['shachisheh@gmail.com', 'manjot@ajath.com']);
+
+
 // Helper for clean URLs without .php extension
 function url($path = '') {
     $path = ltrim($path, '/');

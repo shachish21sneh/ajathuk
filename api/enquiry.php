@@ -1,6 +1,8 @@
 <?php
 /**
  * Ajath Infotech - Enquiry Form Processing API
+ * Validates, records to data/enquiries.json, dispatches SMTP email to shachisheh@gmail.com & manjot@ajath.com,
+ * and handles redirection to /thank-you.
  */
 
 header('Content-Type: application/json');
@@ -10,6 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode(['success' => false, 'message' => 'Method Not Allowed']);
     exit;
 }
+
+require_once __DIR__ . '/../includes/config.php';
+require_once __DIR__ . '/../includes/mailer.php';
 
 // Read POST data (handles both FormData and JSON)
 $input = $_POST;
@@ -75,9 +80,14 @@ $newEnquiry = [
 array_unshift($existing, $newEnquiry);
 @file_put_contents($enquiriesFile, json_encode($existing, JSON_PRETTY_PRINT));
 
+// Dispatch SMTP notification email to shachisheh@gmail.com and manjot@ajath.com
+$emailSent = send_enquiry_email($newEnquiry);
+
 echo json_encode([
     'success' => true,
-    'message' => 'Thank you, ' . htmlspecialchars($fullName) . '! Your enquiry has been received. Our team will contact you within 24 hours.',
+    'message' => 'Thank you, ' . htmlspecialchars($fullName) . '! Your enquiry has been received. We will connect with you within 24 hours.',
+    'emailSent' => $emailSent,
+    'redirect' => '/thank-you',
     'enquiryId' => $newEnquiry['id']
 ]);
 exit;

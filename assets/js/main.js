@@ -139,14 +139,11 @@ function initEnquiryForms() {
           form.reset();
           showToast(data.message, 'success');
 
-          // Close modal if form is inside modal
-          const modalBackdrop = form.closest('.modal-backdrop');
-          if (modalBackdrop) {
-            setTimeout(() => {
-              modalBackdrop.classList.remove('open');
-              document.body.style.overflow = '';
-            }, 2500);
-          }
+          // Smoothly redirect to the thank-you landing page
+          const redirectUrl = data.redirect || '/thank-you';
+          setTimeout(() => {
+            window.location.href = redirectUrl;
+          }, 700);
         } else {
           const errMsg = data.message || (data.errors ? Object.values(data.errors).join(' ') : 'An error occurred.');
           if (statusEl) {
