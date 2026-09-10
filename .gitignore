@@ -1,0 +1,14 @@
+# User submitted data
+data/enquiries.json
+!data/.gitkeep
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor Configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
