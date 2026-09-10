@@ -40,9 +40,9 @@ $canonicalUrl = SITE_URL . parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PAT
   <link rel="apple-touch-icon" href="<?php echo FAVICON_URL; ?>">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=1.2">
-  <link rel="stylesheet" href="/assets/css/components.css?v=1.2">
-  <link rel="stylesheet" href="/assets/css/responsive.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/style.css?v=1.1">
+  <link rel="stylesheet" href="/assets/css/components.css?v=1.1">
+  <link rel="stylesheet" href="/assets/css/responsive.css?v=1.1">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
