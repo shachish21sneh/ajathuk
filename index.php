@@ -1,6 +1,7 @@
 <?php
-$pageTitle = "Ajath Infotech | Mobile App Development & AI Solutions";
+$pageTitle = "Mobile App Development Company | Ajath Infotech";
 $pageDescription = "Ajath Infotech builds powerful mobile applications, AI-integrated apps, AI agents, web applications and custom software solutions for modern businesses.";
+$pageKeywords = "Mobile app development, Custom mobile app development, Mobile app developers, iOS app development, Android app development, AI app development, AI agents, Flutter development, React Native, UK software agency";
 require_once __DIR__ . '/includes/header.php';
 ?>
 

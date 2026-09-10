@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Contact Ajath Infotech | London UK Software & AI Studio";
 $pageDescription = "Contact Ajath Infotech at our United Kingdom headquarters in Northolt, London. Email info@ajath.uk to start your mobile app or AI agent project.";
+$pageKeywords = "Contact Ajath Infotech, hire mobile app developers, request software quote, AI consultation London, UK app development contact";
 require_once __DIR__ . '/includes/header.php';
 ?>
 

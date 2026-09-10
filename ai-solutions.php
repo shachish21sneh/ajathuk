@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "AI Solutions & Autonomous Agents | Ajath Infotech";
 $pageDescription = "Deploy intelligent AI models, autonomous digital agents, LLM integrations, and process automation to supercharge your enterprise productivity.";
+$pageKeywords = "AI solutions, AI agent development, autonomous AI agents, LLM integration, enterprise AI automation, custom AI chatbots, process automation UK, AI development company";
 require_once __DIR__ . '/includes/header.php';
 ?>
 

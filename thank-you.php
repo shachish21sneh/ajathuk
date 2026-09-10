@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Thank You | Enquiry Received | Ajath Infotech";
 $pageDescription = "Thank you for reaching out to Ajath Infotech. We have received your project details and our engineering team will connect with you within 24 hours.";
+$pageRobots = "noindex, follow";
 require_once __DIR__ . '/includes/header.php';
 ?>
 

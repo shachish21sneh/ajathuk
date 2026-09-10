@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "About Ajath Infotech | UK AI & Mobile App Agency";
 $pageDescription = "Learn about Ajath Infotech, a premier UK technology agency headquartered in Northolt, London, specializing in cutting-edge mobile apps and AI agents.";
+$pageKeywords = "About Ajath Infotech, UK mobile app company, London software agency, AI development agency, Northolt London tech firm";
 require_once __DIR__ . '/includes/header.php';
 ?>
 

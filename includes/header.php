@@ -5,39 +5,67 @@ require_once __DIR__ . '/data.php';
 // Page-specific metadata defaults
 $pageTitle = $pageTitle ?? 'Ajath Infotech | Mobile App Development & AI Solutions';
 $pageDescription = $pageDescription ?? 'Ajath Infotech builds powerful mobile applications, AI-integrated apps, AI agents, web applications and custom software solutions for modern businesses.';
-$pageKeywords = 'Mobile App Development Company, Android App Development, iOS App Development, AI App Development, AI Agents Development, AI Integration, AI Automation, Custom Software Development, Web Application Development, AI Development Company, Mobile App Development UK';
-$canonicalUrl = SITE_URL . parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+$pageKeywords = $pageKeywords ?? 'Mobile app development, Custom mobile app development, Mobile app developers, iOS app development, Android app development, AI App Development, AI Agents Development, AI Integration, AI Automation, Custom Software Development, Web Application Development, Mobile App Development UK';
+$pageAuthor = $pageAuthor ?? (defined('COMPANY_LEGAL_NAME') ? COMPANY_LEGAL_NAME : 'Ajath Infotech Pvt Ltd');
+$pageRobots = $pageRobots ?? 'index, follow';
+
+// Compute clean canonical URL
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+if (substr($requestPath, -4) === '.php') {
+    $requestPath = substr($requestPath, 0, -4);
+}
+if ($requestPath === '/index') {
+    $requestPath = '/';
+}
+$canonicalUrl = $canonicalUrl ?? (SITE_URL . $requestPath);
+
+$ogLocale = $ogLocale ?? 'en_GB';
+$ogType = $ogType ?? 'website';
+$ogTitle = $ogTitle ?? $pageTitle;
+$ogDescription = $ogDescription ?? $pageDescription;
+$ogImage = $ogImage ?? (SITE_URL . LOGO_URL);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php echo htmlspecialchars($pageTitle); ?></title>
   
   <!-- Primary SEO Meta -->
+  <title><?php echo htmlspecialchars($pageTitle); ?></title>
   <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>">
-  <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>">
-  <meta name="author" content="Ajath Infotech">
-  <meta name="robots" content="index, follow">
+  <meta name="keywords" itemprop="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>">
+  <meta name="author" content="<?php echo htmlspecialchars($pageAuthor); ?>">
+  <meta name="robots" content="<?php echo htmlspecialchars($pageRobots); ?>">
+  <meta name="revisit-after" content="1 days">
+  <meta name="distribution" content="global">
+  <meta name="copyright" content="<?php echo htmlspecialchars(defined('COMPANY_LEGAL_NAME') ? COMPANY_LEGAL_NAME : 'Ajath Infotech Pvt Ltd'); ?>">
+  <meta name="theme-color" content="<?php echo defined('SITE_THEME_COLOR') ? SITE_THEME_COLOR : '#188DE1'; ?>">
   <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>">
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
+  <meta property="og:locale" content="<?php echo htmlspecialchars($ogLocale); ?>">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:type" content="<?php echo htmlspecialchars($ogType); ?>">
+  <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle); ?>">
+  <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription); ?>">
   <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
-  <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
-  <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
-  <meta property="og:image" content="<?php echo SITE_URL; ?><?php echo LOGO_URL; ?>">
+  <meta property="og:image" content="<?php echo htmlspecialchars($ogImage); ?>">
+  <meta property="og:site_name" content="<?php echo htmlspecialchars(SITE_NAME); ?>">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
-  <meta name="twitter:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
-  <meta name="twitter:image" content="<?php echo SITE_URL; ?><?php echo LOGO_URL; ?>">
+  <meta name="twitter:title" content="<?php echo htmlspecialchars($ogTitle); ?>">
+  <meta name="twitter:description" content="<?php echo htmlspecialchars($ogDescription); ?>">
+  <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage); ?>">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/webp" href="<?php echo FAVICON_URL; ?>">
-  <link rel="apple-touch-icon" href="<?php echo FAVICON_URL; ?>">
+  <!-- Favicons & Touch Icons -->
+  <link rel="apple-touch-icon" href="<?php echo SITE_URL; ?><?php echo LOGO_URL; ?>">
+  <link rel="shortcut icon" href="<?php echo FAVICON_URL; ?>" type="image/webp">
+  <link rel="icon" href="<?php echo FAVICON_URL; ?>" type="image/webp" sizes="16x16">
+  <link rel="icon" href="<?php echo FAVICON_URL; ?>" type="image/webp" sizes="32x32">
+  <link rel="icon" href="<?php echo FAVICON_URL; ?>" type="image/webp" sizes="192x192">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=1.1">

@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "404 Page Not Found | Ajath Infotech";
 $pageDescription = "The page you are looking for does not exist on Ajath Infotech. Return to our homepage or explore our services.";
+$pageRobots = "noindex, follow";
 require_once __DIR__ . '/includes/header.php';
 ?>
 

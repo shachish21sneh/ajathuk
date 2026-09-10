@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Services & Engineering Solutions | Ajath Infotech";
 $pageDescription = "Explore Ajath Infotech's full suite of technology solutions: Mobile App Development, AI Integration, AI Agents, Enterprise Web Apps, and Business Process Automation.";
+$pageKeywords = "Mobile app development services, iOS app developers, Android developers, Flutter apps, React Native agency, AI integration, enterprise web applications, custom software engineering UK";
 require_once __DIR__ . '/includes/header.php';
 ?>
 

@@ -10,6 +10,8 @@ define('SITE_URL', rtrim((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'
 
 // Brand Details
 define('COMPANY_NAME', 'Ajath Infotech');
+define('COMPANY_LEGAL_NAME', 'Ajath Infotech Pvt Ltd');
+define('SITE_THEME_COLOR', '#188DE1');
 define('COMPANY_EMAIL', 'info@ajath.uk');
 define('COMPANY_PHONE_DISPLAY', '+44 (0) 20 8123 4567'); // Easily editable
 define('COMPANY_PHONE_RAW', '+442081234567');

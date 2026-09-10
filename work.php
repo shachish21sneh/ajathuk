@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Case Studies & Work Portfolio | Ajath Infotech";
 $pageDescription = "Explore our proven track record of shipping enterprise mobile applications, AI agents, and custom software systems for UK and global clients.";
+$pageKeywords = "Mobile app portfolio, AI project case studies, custom software portfolio, mobile app developers UK, client success stories Ajath Infotech";
 require_once __DIR__ . '/includes/header.php';
 ?>
 
