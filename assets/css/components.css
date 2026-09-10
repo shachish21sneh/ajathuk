@@ -104,6 +104,16 @@
   justify-content: center;
 }
 
+/* Mobile Drawer & Backdrop Base State (Hidden on Desktop) */
+.mobile-nav-drawer {
+  display: none;
+}
+
+.drawer-backdrop {
+  display: none;
+}
+
+
 /* --------------------------------------------------------------------------
    2. Hero Section
    -------------------------------------------------------------------------- */

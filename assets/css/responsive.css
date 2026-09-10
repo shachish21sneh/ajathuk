@@ -52,26 +52,39 @@
 }
 
 /* --------------------------------------------------------------------------
+   Desktop & Laptop Screens (min-width: 992px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .mobile-nav-drawer,
+  .drawer-backdrop,
+  .nav-mobile-toggle {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Tablets & iPads (max-width: 991px)
    -------------------------------------------------------------------------- */
 @media (max-width: 991px) {
   .nav-menu {
-    display: none;
+    display: none !important;
   }
 
   .nav-mobile-toggle {
-    display: flex;
+    display: flex !important;
   }
 
   .nav-cta-btn {
-    display: none;
+    display: none !important;
   }
 
   /* Mobile Drawer Overlay */
   .mobile-nav-drawer {
+    display: flex;
     position: fixed;
     top: 0;
     right: -100%;
+
     width: 320px;
     max-width: 85%;
     height: 100vh;
