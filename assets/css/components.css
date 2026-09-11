@@ -532,13 +532,16 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
 }
 
 .service-list li svg {
   flex-shrink: 0;
-  color: var(--accent-cyan);
+  color: var(--accent-blue);
+  width: 18px;
+  height: 18px;
 }
 
 .highlight-card .service-list li svg {

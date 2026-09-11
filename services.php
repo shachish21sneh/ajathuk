@@ -27,19 +27,19 @@ require_once __DIR__ . '/includes/header.php';
             <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
               <div>
                 <span class="service-tag"><?php echo htmlspecialchars($svc['tag']); ?></span>
-                <h2 style="font-size: 2rem; margin: 8px 0 16px 0; color:#fff;"><?php echo htmlspecialchars($svc['title']); ?></h2>
+                <h2 style="font-size: 2rem; margin: 8px 0 16px 0; color: var(--text-dark);"><?php echo htmlspecialchars($svc['heading'] ?? $svc['title']); ?></h2>
                 <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 24px; color: var(--text-secondary);">
                   <?php echo htmlspecialchars($svc['description']); ?>
                 </p>
 
-                <div style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 12px;">
+                <div style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-dark); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 14px;">
                   Core Deliverables & Capabilities
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 30px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 30px;">
                   <?php foreach ($svc['items'] as $item): ?>
-                    <div style="display: flex; align-items: center; gap: 8px; font-size: 0.92rem; color: #cbd5e1;">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--accent-cyan); flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span><?php echo htmlspecialchars($item); ?></span>
+                    <div style="display: flex; align-items: center; gap: 8px; font-size: 0.95rem; color: var(--text-dark); font-weight: 600;">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--accent-blue); flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span style="color: var(--text-dark); font-weight: 600;"><?php echo htmlspecialchars($item); ?></span>
                     </div>
                   <?php endforeach; ?>
                 </div>
