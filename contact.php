@@ -53,18 +53,28 @@ require_once __DIR__ . '/includes/header.php';
               </div>
 
               <div class="contact-detail-row">
+                <div class="detail-icon-box" style="background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.3); color: #25D366;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.97.54 1.777.82 2.796.82h.005c3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.767-5.775-5.767zm3.387 8.243c-.144.405-.837.774-1.17.824-.312.045-.634.072-1.84-.426-1.542-.636-2.528-2.203-2.605-2.304-.077-.102-.625-.83-.625-1.585 0-.754.396-1.125.536-1.278.14-.153.307-.192.41-.192.102 0 .205.002.294.007.095.005.222-.036.347.265.128.307.436 1.062.474 1.139.038.077.064.167.013.269-.051.102-.077.166-.153.255-.077.09-.161.2-.23.269-.077.077-.157.161-.067.315.09.153.399.658.856 1.065.589.524 1.085.687 1.239.764.153.077.243.064.333-.038.09-.102.384-.448.486-.601.102-.153.205-.128.345-.077.14.051.896.422 1.049.499.153.077.256.115.294.179.038.064.038.371-.106.776z"/></svg>
+                </div>
+                <div class="detail-text">
+                  <h4>WhatsApp Chat</h4>
+                  <a href="<?php echo COMPANY_WHATSAPP_URL; ?>" target="_blank" rel="noopener noreferrer" style="color:#059669; font-weight:700;">Chat on WhatsApp ↗</a>
+                </div>
+              </div>
+
+              <div class="contact-detail-row">
                 <div class="detail-icon-box">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
                 <div class="detail-text">
-                  <h4>United Kingdom Office</h4>
+                  <h4>United Kingdom HQ</h4>
                   <p><?php echo COMPANY_ADDRESS_STREET; ?><br><?php echo COMPANY_ADDRESS_CITY; ?>, <?php echo COMPANY_ADDRESS_POSTCODE; ?>, <?php echo COMPANY_ADDRESS_COUNTRY; ?></p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Interactive Google Maps Card (Pages 13-14) -->
+          <!-- Interactive Google Maps Card -->
           <div>
             <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 8px; font-weight:600; display:flex; justify-content:space-between;">
               <span>Interactive Location Map</span>
@@ -109,7 +119,7 @@ require_once __DIR__ . '/includes/header.php';
               </div>
               <div class="form-group">
                 <label for="cp-phone">Phone Number</label>
-                <input type="tel" id="cp-phone" name="phone" class="form-input" placeholder="+44 ...">
+                <input type="tel" id="cp-phone" name="phone" class="form-input" placeholder="+1 (347) ...">
               </div>
             </div>
 
@@ -144,6 +154,48 @@ require_once __DIR__ . '/includes/header.php';
       </div>
     </section>
 
+    <!-- Global Offices & Presence Section -->
+    <section class="container" style="margin-bottom: 80px;">
+      <div class="section-header">
+        <div class="section-badge">Global Presence</div>
+        <h2>Our International Offices</h2>
+        <p>Operating across 4 key global tech hubs to serve clients in Europe, North America, the Middle East, and Asia.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <?php foreach (GLOBAL_OFFICES as $key => $office): ?>
+          <div class="glass-card" style="padding: 28px; display: flex; flex-direction: column; justify-content: space-between; border-radius: var(--radius-lg);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                <span style="font-size: 1.8rem;"><?php echo $office['flag']; ?></span>
+                <span class="tech-badge-item"><?php echo htmlspecialchars($office['role']); ?></span>
+              </div>
+              <h3 style="font-size: 1.25rem; color: var(--text-dark); margin-bottom: 12px;"><?php echo htmlspecialchars($office['country']); ?></h3>
+              <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                <?php echo htmlspecialchars($office['address']); ?>
+              </p>
+            </div>
+            <div style="padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 8px;">
+              <div style="font-size: 0.88rem;">
+                <span style="color: var(--text-muted);">Email: </span>
+                <a href="mailto:<?php echo htmlspecialchars($office['email']); ?>" style="color: var(--accent-cyan); font-weight: 600;"><?php echo htmlspecialchars($office['email']); ?></a>
+              </div>
+              <div style="font-size: 0.88rem;">
+                <span style="color: var(--text-muted);">Phone: </span>
+                <a href="tel:<?php echo htmlspecialchars($office['phone_raw']); ?>" style="color: var(--text-dark); font-weight: 600;"><?php echo htmlspecialchars($office['phone']); ?></a>
+              </div>
+              <div style="font-size: 0.88rem; margin-top: 4px;">
+                <a href="<?php echo htmlspecialchars($office['website']); ?>" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                  <span>Visit <?php echo parse_url($office['website'], PHP_URL_HOST) ?? $office['website']; ?></span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </section>
+
     <!-- Frequently Asked Questions -->
     <section class="container" style="max-width: 900px;">
       <div class="section-header">
@@ -154,17 +206,17 @@ require_once __DIR__ . '/includes/header.php';
 
       <div style="display:flex; flex-direction:column; gap: 16px;">
         <div class="glass-card" style="padding: 24px;">
-          <h4 style="color:#fff; margin-bottom: 8px;">How quickly can we kick off a new development sprint?</h4>
+          <h4 style="color:var(--text-dark); margin-bottom: 8px;">How quickly can we kick off a new development sprint?</h4>
           <p style="font-size:0.95rem;">Following our initial discovery call and technical scoping workshop, we typically assemble your dedicated engineering squad and start sprint 0 within 5 to 7 business days.</p>
         </div>
 
         <div class="glass-card" style="padding: 24px;">
-          <h4 style="color:#fff; margin-bottom: 8px;">Who owns the Intellectual Property (IP) of the software?</h4>
+          <h4 style="color:var(--text-dark); margin-bottom: 8px;">Who owns the Intellectual Property (IP) of the software?</h4>
           <p style="font-size:0.95rem;">You retain 100% full intellectual property ownership and source code rights upon project milestones. All repositories, keys, and deployment assets belong entirely to your company.</p>
         </div>
 
         <div class="glass-card" style="padding: 24px;">
-          <h4 style="color:#fff; margin-bottom: 8px;">Can you integrate AI into our existing legacy software systems?</h4>
+          <h4 style="color:var(--text-dark); margin-bottom: 8px;">Can you integrate AI into our existing legacy software systems?</h4>
           <p style="font-size:0.95rem;">Yes. We specialize in non-disruptive AI integrations, creating microservice API bridges and secure vector search pipelines that enhance your existing databases without requiring a risky total rewrite.</p>
         </div>
       </div>

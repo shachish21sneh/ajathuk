@@ -809,6 +809,16 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
 
                 <div class="contact-detail-row">
+                  <div class="detail-icon-box" style="background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.3); color: #25D366;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.97.54 1.777.82 2.796.82h.005c3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.767-5.775-5.767zm3.387 8.243c-.144.405-.837.774-1.17.824-.312.045-.634.072-1.84-.426-1.542-.636-2.528-2.203-2.605-2.304-.077-.102-.625-.83-.625-1.585 0-.754.396-1.125.536-1.278.14-.153.307-.192.41-.192.102 0 .205.002.294.007.095.005.222-.036.347.265.128.307.436 1.062.474 1.139.038.077.064.167.013.269-.051.102-.077.166-.153.255-.077.09-.161.2-.23.269-.077.077-.157.161-.067.315.09.153.399.658.856 1.065.589.524 1.085.687 1.239.764.153.077.243.064.333-.038.09-.102.384-.448.486-.601.102-.153.205-.128.345-.077.14.051.896.422 1.049.499.153.077.256.115.294.179.038.064.038.371-.106.776z"/></svg>
+                  </div>
+                  <div class="detail-text">
+                    <h4>WhatsApp Direct</h4>
+                    <a href="<?php echo COMPANY_WHATSAPP_URL; ?>" target="_blank" rel="noopener noreferrer" style="color:#059669; font-weight:700;">Chat on WhatsApp ↗</a>
+                  </div>
+                </div>
+
+                <div class="contact-detail-row">
                   <div class="detail-icon-box">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                   </div>

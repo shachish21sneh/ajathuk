@@ -82,9 +82,16 @@ require_once __DIR__ . '/includes/header.php';
         </a>
       </div>
 
-      <!-- Direct Contact Line -->
-      <div style="font-size: 0.92rem; color: var(--text-muted);">
-        Need immediate assistance? Email us at <a href="mailto:info@ajath.uk" style="color:var(--accent-cyan); font-weight:600;">info@ajath.uk</a> or call <a href="tel:+442081234567" style="color:var(--text-dark); font-weight:600;">+44 (0) 20 8123 4567</a>.
+      <!-- Direct Contact & WhatsApp -->
+      <div style="font-size: 0.95rem; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div>
+          Need immediate assistance? Email us at <a href="mailto:<?php echo COMPANY_EMAIL; ?>" style="color:var(--accent-cyan); font-weight:600;"><?php echo COMPANY_EMAIL; ?></a> or call <a href="tel:<?php echo COMPANY_PHONE_RAW; ?>" style="color:var(--text-dark); font-weight:600;"><?php echo COMPANY_PHONE_DISPLAY; ?></a>.
+        </div>
+        <div>
+          <a href="<?php echo COMPANY_WHATSAPP_URL; ?>" target="_blank" rel="noopener noreferrer" style="color:#059669; font-weight:700; display:inline-flex; align-items:center; gap:6px; background:rgba(37,211,102,0.1); padding:6px 14px; border-radius:20px; border:1px solid rgba(37,211,102,0.25);">
+            <span>💬 Chat Directly on WhatsApp (+13475393979)</span>
+          </a>
+        </div>
       </div>
     </div>
   </main>

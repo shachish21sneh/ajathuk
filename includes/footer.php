@@ -46,25 +46,37 @@ require_once __DIR__ . '/config.php';
           </ul>
         </div>
 
-        <!-- Contact & UK Office -->
+        <!-- Contact & Global Offices -->
         <div class="footer-col">
-          <h4 class="footer-col-title">Contact</h4>
+          <h4 class="footer-col-title">Contact & Offices</h4>
           <ul class="footer-links-list">
             <li>
-              <span style="color:var(--text-muted); display:block; font-size:0.8rem;">Email</span>
-              <a href="mailto:<?php echo COMPANY_EMAIL; ?>" style="color:var(--text-white); font-weight:600;"><?php echo COMPANY_EMAIL; ?></a>
+              <span style="color:var(--text-muted); display:block; font-size:0.8rem;">UK & Global Email</span>
+              <a href="mailto:<?php echo COMPANY_EMAIL; ?>" style="color:var(--text-dark); font-weight:600;"><?php echo COMPANY_EMAIL; ?></a>
             </li>
             <li>
-              <span style="color:var(--text-muted); display:block; font-size:0.8rem;">Phone</span>
-              <a href="tel:<?php echo COMPANY_PHONE_RAW; ?>" style="color:var(--text-white); font-weight:600;"><?php echo COMPANY_PHONE_DISPLAY; ?></a>
+              <span style="color:var(--text-muted); display:block; font-size:0.8rem;">Phone Line</span>
+              <a href="tel:<?php echo COMPANY_PHONE_RAW; ?>" style="color:var(--text-dark); font-weight:600;"><?php echo COMPANY_PHONE_DISPLAY; ?></a>
             </li>
             <li>
-              <span style="color:var(--text-muted); display:block; font-size:0.8rem;">Location</span>
-              <span style="color:#cbd5e1; font-size:0.92rem;"><?php echo COMPANY_ADDRESS_STREET; ?>, <?php echo COMPANY_ADDRESS_CITY; ?>, <?php echo COMPANY_ADDRESS_POSTCODE; ?>, <?php echo COMPANY_ADDRESS_COUNTRY; ?></span>
+              <span style="color:var(--text-muted); display:block; font-size:0.8rem;">WhatsApp</span>
+              <a href="<?php echo COMPANY_WHATSAPP_URL; ?>" target="_blank" rel="noopener noreferrer" style="color:#059669; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <span>Chat on WhatsApp</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </li>
+            <li>
+              <span style="color:var(--text-muted); display:block; font-size:0.8rem;">Locations</span>
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:4px;">
+                <span class="p-tag">🇬🇧 UK HQ</span>
+                <span class="p-tag">🇺🇸 USA</span>
+                <span class="p-tag">🇦🇪 Dubai</span>
+                <span class="p-tag">🇮🇳 India</span>
+              </div>
             </li>
             <li style="margin-top: 6px;">
               <a href="<?php echo COMPANY_MAPS_URL; ?>" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan); display:inline-flex; align-items:center; gap:6px;">
-                <span>View on Google Maps</span>
+                <span>View UK HQ on Maps</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                   <polyline points="15 3 21 3 21 9"></polyline>

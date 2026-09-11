@@ -124,6 +124,9 @@ $ogImageType = $ogImageType ?? 'image/png';
       "closes": "18:00"
     },
     "sameAs": [
+      "https://ajath.uk",
+      "https://dev.ajath.us/",
+      "https://ajath.ae",
       "https://ajath.com",
       "https://twitter.com/ajathinfotech",
       "https://linkedin.com/company/ajathinfotech"
