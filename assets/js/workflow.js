@@ -112,8 +112,8 @@ function initAgentsSandbox() {
           ${prompt}
         </div>
         <div class="chat-bubble agent">
-          <div style="font-size:0.75rem; color: #00f0ff; margin-bottom: 4px; font-weight: 600;">
-            <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#00f0ff; margin-right:4px;"></span>
+          <div style="font-size:0.75rem; color: #0284c7; margin-bottom: 4px; font-weight: 600;">
+            <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#0284c7; margin-right:4px;"></span>
             ${title} (Active Agent)
           </div>
           ${response}

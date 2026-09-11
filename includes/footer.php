@@ -96,7 +96,7 @@ require_once __DIR__ . '/config.php';
   <div class="mobile-sticky-cta-bar">
     <div style="display:flex; flex-direction:column;">
       <span style="font-size:0.75rem; color:var(--accent-cyan); font-weight:700; text-transform:uppercase;">UK AI & App Agency</span>
-      <span style="font-size:0.88rem; font-weight:700; color:#fff;">Let's Talk</span>
+      <span style="font-size:0.88rem; font-weight:700; color:var(--text-dark);">Let's Talk</span>
     </div>
     <button type="button" class="btn btn-primary btn-sm" data-open-modal="consultation-modal">
       Start Your Project
@@ -185,32 +185,32 @@ require_once __DIR__ . '/config.php';
 
       <div style="margin-bottom: 20px;">
         <span class="agent-badge-pill" id="modal-project-client" style="margin-bottom:8px;">Enterprise Case Study</span>
-        <h3 id="modal-project-title" style="margin-top: 6px; font-size: 1.6rem; color: #fff;">Project Details</h3>
+        <h3 id="modal-project-title" style="margin-top: 6px; font-size: 1.6rem; color: var(--text-dark);">Project Details</h3>
       </div>
 
-      <img id="modal-project-img" src="" alt="Case Study Preview" style="width: 100%; height: 210px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 18px; border: 1px solid var(--border-glass);">
+      <img id="modal-project-img" src="" alt="Case Study Preview" style="width: 100%; height: 210px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 18px; border: 1px solid var(--border-subtle);">
 
-      <p id="modal-project-desc" style="font-size: 0.98rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 18px;"></p>
+      <p id="modal-project-desc" style="font-size: 0.98rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 18px;"></p>
 
       <!-- Deep Dive Blocks -->
-      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; background: #f8fafc; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
         <div id="modal-project-problem-wrap">
-          <div style="font-size: 0.75rem; text-transform: uppercase; color: #f87171; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px;">The Challenge</div>
-          <p id="modal-project-problem" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.55; margin: 0;"></p>
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: #dc2626; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px;">The Challenge</div>
+          <p id="modal-project-problem" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55; margin: 0;"></p>
         </div>
         <div id="modal-project-solution-wrap">
           <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px;">The Engineering Solution</div>
-          <p id="modal-project-solution" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.55; margin: 0;"></p>
+          <p id="modal-project-solution" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55; margin: 0;"></p>
         </div>
         <div id="modal-project-impact-wrap">
-          <div style="font-size: 0.75rem; text-transform: uppercase; color: #34d399; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px;">Measurable Outcome</div>
-          <p id="modal-project-impact" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.55; margin: 0;"></p>
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: #059669; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px;">Measurable Outcome</div>
+          <p id="modal-project-impact" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55; margin: 0;"></p>
         </div>
       </div>
 
-      <div style="background: rgba(0, 240, 255, 0.05); border: 1px solid rgba(0, 240, 255, 0.2); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
+      <div style="background: rgba(2, 132, 199, 0.06); border: 1px solid rgba(2, 132, 199, 0.2); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
         <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px;">Delivered Impact & Metrics</div>
-        <div id="modal-project-metrics" style="font-size: 1.05rem; font-weight: 700; color: #fff;"></div>
+        <div id="modal-project-metrics" style="font-size: 1.05rem; font-weight: 700; color: var(--text-dark);"></div>
       </div>
 
       <div style="margin-bottom: 24px;">
@@ -239,7 +239,7 @@ require_once __DIR__ . '/config.php';
         </svg>
       </button>
       <h3 id="privacy-modal-title" style="margin-bottom: 16px;">Privacy Policy</h3>
-      <div style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; display: flex; flex-direction: column; gap: 14px;">
         <p>At <strong>Ajath Infotech</strong>, registered in the United Kingdom, we are committed to protecting and respecting your privacy in full compliance with the UK General Data Protection Regulation (UK GDPR) and Data Protection Act 2018.</p>
         <p><strong>Information We Collect:</strong> When you submit an enquiry, request a consultation, or interact with our digital workforce simulations, we may collect your name, email address, company name, phone number, and project specifications.</p>
         <p><strong>How We Use Your Data:</strong> We exclusively use your information to respond to your direct queries, schedule discovery sessions, and evaluate software architecture suitability. We never sell or share your data with third-party advertisers.</p>
@@ -258,7 +258,7 @@ require_once __DIR__ . '/config.php';
         </svg>
       </button>
       <h3 id="terms-modal-title" style="margin-bottom: 16px;">Terms & Conditions</h3>
-      <div style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; display: flex; flex-direction: column; gap: 14px;">
         <p>These terms govern the use of the Ajath Infotech website and preliminary consultancy discovery engagements.</p>
         <p><strong>Intellectual Property:</strong> All software engineering concepts, AI agent architecture models, proprietary visual mockups, and codebase structures produced by Ajath Infotech remain protected under UK and international copyright laws.</p>
         <p><strong>Client Project Agreements:</strong> Individual mobile application, AI agent, and custom web software contracts are subject to mutually executed Master Services Agreements (MSAs) and Statements of Work (SOWs).</p>
@@ -276,7 +276,7 @@ require_once __DIR__ . '/config.php';
         </svg>
       </button>
       <h3 id="cookies-modal-title" style="margin-bottom: 16px;">Cookie Policy</h3>
-      <div style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; display: flex; flex-direction: column; gap: 14px;">
         <p>Ajath Infotech utilizes strictly necessary session cookies to maintain security, session state during form submissions, and user interface preferences.</p>
         <p>We prioritize minimal tracking to safeguard your privacy and ensure lightning-fast Core Web Vitals performance across all modern web browsers.</p>
       </div>

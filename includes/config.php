@@ -22,7 +22,7 @@ define('COMPANY_ADDRESS_COUNTRY', 'United Kingdom');
 define('COMPANY_MAPS_URL', 'https://maps.app.goo.gl/8zTaWyddYztiCVtw8?g_st=awb');
 
 // Assets
-define('LOGO_URL', '/assets/images/ajath-logo-white.webp');
+define('LOGO_URL', '/assets/images/ajath-logo-dark.webp');
 define('FAVICON_URL', '/assets/images/favicon-ajath.png');
 define('FAVICON_WEBP_URL', '/assets/images/favicon-ajath.webp');
 define('OG_IMAGE_URL', '/assets/images/og-share.png');

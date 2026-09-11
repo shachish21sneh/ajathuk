@@ -9,7 +9,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="container" style="max-width: 680px;">
       <div class="section-badge" style="margin-bottom: 20px;">Error 404</div>
       <h1 style="font-size: clamp(3rem, 7vw, 6rem); margin-bottom: 12px;" class="text-gradient">404</h1>
-      <h2 style="font-size: 2rem; margin-bottom: 18px; color: #fff;">Page Not Found</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 18px; color: var(--text-dark);">Page Not Found</h2>
       <p style="font-size: 1.15rem; margin-bottom: 36px; color: var(--text-secondary);">
         The page or URL you requested could not be located on our servers. It may have been moved, renamed, or temporarily unavailable.
       </p>

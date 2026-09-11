@@ -26,7 +26,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="glass-card contact-info-card">
           <div>
             <span class="service-tag">Direct Inquiries</span>
-            <h2 style="font-size: 1.8rem; color: #fff; margin: 6px 0 16px 0;"><?php echo COMPANY_NAME; ?></h2>
+            <h2 style="font-size: 1.8rem; color: var(--text-dark); margin: 6px 0 16px 0;"><?php echo COMPANY_NAME; ?></h2>
             <p>
               We partner with founders, CTOs, and product leaders to design and deliver high-impact digital solutions.
             </p>

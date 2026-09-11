@@ -25,7 +25,7 @@ require_once __DIR__ . '/includes/header.php';
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
           <div>
             <span class="service-tag">Our Philosophy</span>
-            <h2 style="font-size: 2.2rem; color: #fff; margin: 8px 0 20px 0;">
+            <h2 style="font-size: 2.2rem; color: var(--text-dark); margin: 8px 0 20px 0;">
               High-Velocity Software With AI-First Thinking
             </h2>
             <p style="margin-bottom: 18px; line-height: 1.7;">
@@ -40,39 +40,39 @@ require_once __DIR__ . '/includes/header.php';
                 <div style="font-size: 0.85rem; color: var(--text-muted);">Delivery Success</div>
               </div>
               <div>
-                <div style="font-size: 2rem; font-weight: 800; color: #a855f7;">50+</div>
+                <div style="font-size: 2rem; font-weight: 800; color: var(--accent-purple);">50+</div>
                 <div style="font-size: 0.85rem; color: var(--text-muted);">Apps Shipped</div>
               </div>
               <div>
-                <div style="font-size: 2rem; font-weight: 800; color: #10b981;">24/7</div>
+                <div style="font-size: 2rem; font-weight: 800; color: var(--accent-emerald);">24/7</div>
                 <div style="font-size: 0.85rem; color: var(--text-muted);">AI Agent Uptime</div>
               </div>
             </div>
           </div>
 
-          <div style="background: rgba(6, 9, 14, 0.8); border: 1px solid var(--border-glass); border-radius: var(--radius-lg); padding: 36px; display: flex; flex-direction: column; gap: 20px;">
-            <div style="font-size: 1.2rem; font-weight: 700; color: #fff;">Our Core Guiding Principles</div>
+          <div style="background: #f8fafc; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 36px; display: flex; flex-direction: column; gap: 20px;">
+            <div style="font-size: 1.2rem; font-weight: 700; color: var(--text-dark);">Our Core Guiding Principles</div>
             
             <div style="display: flex; gap: 14px; align-items: flex-start;">
-              <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(0,240,255,0.1); color: var(--accent-cyan); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">1</div>
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(2,132,199,0.1); color: var(--accent-cyan); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">1</div>
               <div>
-                <div style="font-weight: 700; color: #fff; margin-bottom: 4px;">Business-Focused Development</div>
+                <div style="font-weight: 700; color: var(--text-dark); margin-bottom: 4px;">Business-Focused Development</div>
                 <div style="font-size: 0.9rem; color: var(--text-secondary);">We align technology architecture directly with your commercial KPIs and conversion metrics.</div>
               </div>
             </div>
 
             <div style="display: flex; gap: 14px; align-items: flex-start;">
-              <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(139,92,246,0.1); color: #c084fc; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">2</div>
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(124,58,237,0.1); color: var(--accent-purple); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">2</div>
               <div>
-                <div style="font-weight: 700; color: #fff; margin-bottom: 4px;">Zero Generic Templates</div>
+                <div style="font-weight: 700; color: var(--text-dark); margin-bottom: 4px;">Zero Generic Templates</div>
                 <div style="font-size: 0.9rem; color: var(--text-secondary);">Every line of code and UI component is bespoke, robust, and designed specifically for your brand.</div>
               </div>
             </div>
 
             <div style="display: flex; gap: 14px; align-items: flex-start;">
-              <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(16,185,129,0.1); color: #34d399; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">3</div>
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(5,150,105,0.1); color: var(--accent-emerald); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">3</div>
               <div>
-                <div style="font-weight: 700; color: #fff; margin-bottom: 4px;">Long-Term Partnership</div>
+                <div style="font-weight: 700; color: var(--text-dark); margin-bottom: 4px;">Long-Term Partnership</div>
                 <div style="font-size: 0.9rem; color: var(--text-secondary);">We provide proactive scaling, security audits, and continuous AI capability upgrades post-launch.</div>
               </div>
             </div>

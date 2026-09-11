@@ -232,7 +232,7 @@ require_once __DIR__ . '/includes/header.php';
         <!-- Interactive Visual Workflow Component (User -> AI -> Business Logic -> APIs -> DB -> Action) -->
         <div class="workflow-container">
           <div class="workflow-header">
-            <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 6px;">Enterprise AI Execution Pipeline</h3>
+            <h3 style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 6px;">Enterprise AI Execution Pipeline</h3>
             <p style="font-size: 0.92rem; color: var(--text-secondary);">Click each step to inspect the real-time processing layer</p>
           </div>
 
@@ -782,7 +782,7 @@ require_once __DIR__ . '/includes/header.php';
           <!-- Left: Contact Details & Google Maps Embed -->
           <div class="glass-card contact-info-card">
             <div>
-              <h3 style="font-size:1.6rem; color:#fff;"><?php echo COMPANY_NAME; ?></h3>
+              <h3 style="font-size:1.6rem; color:var(--text-dark);"><?php echo COMPANY_NAME; ?></h3>
               <p style="margin-top: 8px;">
                 Leading UK AI systems & Mobile Application development agency.
               </p>

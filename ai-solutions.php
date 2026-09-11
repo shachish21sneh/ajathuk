@@ -24,7 +24,7 @@ require_once __DIR__ . '/includes/header.php';
       <div class="workflow-container">
         <div class="workflow-header">
           <div class="section-badge" style="margin-bottom: 8px;">Architecture Blueprint</div>
-          <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 6px;">End-to-End Autonomous AI Pipeline</h2>
+          <h2 style="font-size: 1.8rem; color: var(--text-dark); margin-bottom: 6px;">End-to-End Autonomous AI Pipeline</h2>
           <p style="font-size: 0.95rem; color: var(--text-secondary);">Click any step to inspect the underlying security and execution layer</p>
         </div>
 

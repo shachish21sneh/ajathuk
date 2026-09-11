@@ -5,6 +5,16 @@ $pageRobots = "noindex, follow";
 require_once __DIR__ . '/includes/header.php';
 ?>
 
+  <!-- Event snippet for Lead conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18351205284/aSUwCJqD99YcEKTXxK5E',
+        'value': 0.0,
+        'currency': 'INR',
+        'transaction_id': ''
+    });
+  </script>
+
   <main id="main-content" style="padding-top: calc(var(--header-height) + 50px); padding-bottom: 100px; text-align: center;">
     <div class="container" style="max-width: 820px;">
       <!-- Glowing Success Icon -->
@@ -14,46 +24,46 @@ require_once __DIR__ . '/includes/header.php';
         </svg>
       </div>
 
-      <div class="section-badge" style="color: #34d399; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); margin-bottom: 16px;">
+      <div class="section-badge" style="color: #059669; background: rgba(5, 150, 105, 0.1); border-color: rgba(5, 150, 105, 0.25); margin-bottom: 16px;">
         Enquiry Submitted Successfully
       </div>
 
-      <h1 style="font-size: clamp(2.3rem, 4.5vw, 3.4rem); margin-bottom: 18px; color: #ffffff;">
+      <h1 style="font-size: clamp(2.3rem, 4.5vw, 3.4rem); margin-bottom: 18px; color: var(--text-dark);">
         Thank You for Contacting <span class="text-gradient">Ajath Infotech</span>
       </h1>
 
       <!-- 24 Hours Prominent Notice -->
-      <div style="background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border: 1px solid rgba(0, 240, 255, 0.35); border-radius: var(--radius-lg); padding: 24px 28px; margin: 30px auto; max-width: 680px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+      <div style="background: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%); border: 1px solid rgba(2, 132, 199, 0.25); border-radius: var(--radius-lg); padding: 24px 28px; margin: 30px auto; max-width: 680px; box-shadow: var(--shadow-md);">
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 8px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          <span style="font-size: 1.25rem; font-weight: 800; color: #ffffff;">We will connect with you within 24 hours</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span style="font-size: 1.25rem; font-weight: 800; color: var(--text-dark);">We will connect with you within 24 hours</span>
         </div>
-        <p style="font-size: 1rem; color: #cbd5e1; margin: 0; line-height: 1.6;">
+        <p style="font-size: 1rem; color: var(--text-secondary); margin: 0; line-height: 1.6;">
           Your enquiry has been dispatched directly to our technical directors. A lead engineer will evaluate your requirements and reach out via email or phone with recommended next steps.
         </p>
       </div>
 
       <!-- What Happens Next Roadmap -->
       <div class="glass-card" style="padding: 36px 30px; text-align: left; margin: 40px 0; border-radius: var(--radius-xl);">
-        <h3 style="font-size: 1.35rem; color: #ffffff; margin-bottom: 24px; text-align: center;">What Happens Next?</h3>
+        <h3 style="font-size: 1.35rem; color: var(--text-dark); margin-bottom: 24px; text-align: center;">What Happens Next?</h3>
         
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
           <div style="display: flex; flex-direction: column; gap: 10px;">
             <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--accent-cyan); line-height: 1;">01</div>
-            <h4 style="font-size: 1.05rem; color: #ffffff;">Technical Review</h4>
-            <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.5;">Our engineering team analyzes your project scope, platform feasibility, and AI agent architectures.</p>
+            <h4 style="font-size: 1.05rem; color: var(--text-dark);">Technical Review</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Our engineering team analyzes your project scope, platform feasibility, and AI agent architectures.</p>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: #a855f7; line-height: 1;">02</div>
-            <h4 style="font-size: 1.05rem; color: #ffffff;">Roadmap & Estimates</h4>
-            <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.5;">We outline initial delivery milestones, estimated investment scope, and recommended tech stacks.</p>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--accent-purple); line-height: 1;">02</div>
+            <h4 style="font-size: 1.05rem; color: var(--text-dark);">Roadmap & Estimates</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">We outline initial delivery milestones, estimated investment scope, and recommended tech stacks.</p>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: #10b981; line-height: 1;">03</div>
-            <h4 style="font-size: 1.05rem; color: #ffffff;">Discovery Call</h4>
-            <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.5;">We schedule a free 30-minute discovery session with our senior UK engineering lead.</p>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald); line-height: 1;">03</div>
+            <h4 style="font-size: 1.05rem; color: var(--text-dark);">Discovery Call</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">We schedule a free 30-minute discovery session with our senior UK engineering lead.</p>
           </div>
         </div>
       </div>
@@ -74,7 +84,7 @@ require_once __DIR__ . '/includes/header.php';
 
       <!-- Direct Contact Line -->
       <div style="font-size: 0.92rem; color: var(--text-muted);">
-        Need immediate assistance? Email us at <a href="mailto:info@ajath.uk" style="color:var(--accent-cyan); font-weight:600;">info@ajath.uk</a> or call <a href="tel:+442081234567" style="color:#ffffff; font-weight:600;">+44 (0) 20 8123 4567</a>.
+        Need immediate assistance? Email us at <a href="mailto:info@ajath.uk" style="color:var(--accent-cyan); font-weight:600;">info@ajath.uk</a> or call <a href="tel:+442081234567" style="color:var(--text-dark); font-weight:600;">+44 (0) 20 8123 4567</a>.
       </div>
     </div>
   </main>
