@@ -363,7 +363,8 @@ require_once __DIR__ . '/includes/header.php';
                  data-agent-title="<?php echo htmlspecialchars($agent['title']); ?>"
                  data-agent-badge="<?php echo htmlspecialchars($agent['badge']); ?>"
                  data-agent-prompt="<?php echo htmlspecialchars($agent['sample_prompt']); ?>"
-                 data-agent-response="<?php echo htmlspecialchars($agent['sample_response']); ?>">
+                 data-agent-response="<?php echo htmlspecialchars($agent['sample_response']); ?>"
+                 data-agent-chips='<?php echo json_encode($agent['quick_prompts'] ?? []); ?>'>
               <div class="agent-header">
                 <span class="agent-badge-pill"><?php echo htmlspecialchars($agent['badge']); ?></span>
                 <h3 class="agent-title"><?php echo htmlspecialchars($agent['title']); ?></h3>
@@ -374,43 +375,72 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
               </div>
 
-              <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px;">
-                <span style="font-size: 0.8rem; color: var(--accent-cyan); font-weight: 600; display:flex; align-items:center; gap:6px;">
-                  <span>Click to test simulation</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </span>
+              <div class="agent-card-actions">
+                <button type="button" class="btn-test-simulation" data-test-agent title="Test simulation in terminal">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  <span>Test Simulation</span>
+                </button>
+                <button type="button" class="btn-build-agent" data-open-modal="consultation-modal" data-agent-select="<?php echo htmlspecialchars($agent['title']); ?>" title="Consult on building this agent">
+                  <span>Build Agent ↗</span>
+                </button>
               </div>
             </div>
           <?php endforeach; ?>
         </div>
 
         <!-- Interactive AI Agent Live Sandbox Simulator -->
-        <div class="agent-sandbox-wrapper">
+        <div class="agent-sandbox-wrapper" id="agent-sandbox">
           <div class="sandbox-header">
             <div>
-              <span style="font-size:0.75rem; color:var(--accent-purple); text-transform:uppercase; font-weight:700; letter-spacing:0.06em;">Live Agent Sandbox</span>
+              <span style="font-size:0.75rem; color:var(--accent-purple); text-transform:uppercase; font-weight:700; letter-spacing:0.06em;">Interactive AI Terminal</span>
               <h3 id="sandbox-agent-title" style="font-size:1.4rem; color:var(--text-dark); margin-top:2px;">Customer Support Agent</h3>
             </div>
-            <div class="agent-badge-pill" id="sandbox-agent-badge" style="margin-bottom:0;">Instant 24/7 Resolution</div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="display:inline-flex; align-items:center; gap:5px; font-size:0.75rem; font-weight:700; color:#059669; background:rgba(5,150,105,0.1); padding:4px 10px; border-radius:20px; border:1px solid rgba(5,150,105,0.25);">
+                <span style="width:6px; height:6px; border-radius:50%; background:#059669; box-shadow:0 0 6px #059669;"></span>
+                Live & Grounded
+              </span>
+              <div class="agent-badge-pill" id="sandbox-agent-badge" style="margin-bottom:0;">Instant 24/7 Resolution</div>
+            </div>
           </div>
 
+          <!-- Quick Test Prompt Chips -->
+          <div class="sandbox-chips-wrapper" id="sandbox-chips-wrapper">
+            <span class="sandbox-chips-label">Quick Prompts:</span>
+            <div class="sandbox-chips-list" id="sandbox-chips-list">
+              <button type="button" class="sandbox-chip" data-chip-prompt="How do I upgrade my team plan and invite 5 new engineers?">Upgrade team plan</button>
+              <button type="button" class="sandbox-chip" data-chip-prompt="How do I reset my client API authentication password?">Reset client password</button>
+              <button type="button" class="sandbox-chip" data-chip-prompt="What is our current API rate limit and consumption status?">API rate limit status</button>
+            </div>
+          </div>
+
+          <!-- Live Chat Stream Box -->
           <div class="sandbox-chat-box" id="sandbox-chat-box">
             <div class="chat-bubble user">
               <div style="font-size:0.75rem; color: var(--text-muted); margin-bottom: 4px; font-weight: 600;">Customer / User Input</div>
-              “How do I upgrade my team plan and invite 5 new engineers?”
+              How do I upgrade my team plan and invite 5 new engineers?
             </div>
             <div class="chat-bubble agent">
               <div style="font-size:0.75rem; color: var(--accent-cyan); margin-bottom: 4px; font-weight: 700; display:flex; align-items:center; gap:6px;">
                 <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent-cyan);"></span>
                 Customer Support Agent (Active Agent)
               </div>
-              “You can upgrade directly in Billing Settings. I have generated an upgrade preview link and staged 5 team invites for you!”
+              You can upgrade directly in Billing Settings. I have generated an upgrade preview link and staged 5 team invites for you!
             </div>
           </div>
 
+          <!-- Custom Query Input Tester Form -->
+          <form id="sandbox-prompt-form" class="sandbox-input-form">
+            <input type="text" id="sandbox-user-input" class="sandbox-input" placeholder="Type a custom query or instruction for this agent..." required>
+            <button type="submit" class="btn btn-primary btn-sm sandbox-submit-btn">
+              <span>Test Query</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
             <span style="font-size: 0.85rem; color: var(--text-muted);">
-              ⚡ Powered by low-latency inference with custom business knowledge grounding
+              ⚡ Low-latency inference with real-time tool function calling & private RAG memory
             </span>
             <button type="button" class="btn btn-primary btn-sm" data-open-modal="consultation-modal">
               Build Your AI Agent

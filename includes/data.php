@@ -129,8 +129,13 @@ $aiAgentsData = [
         'description' => 'Answers customer questions automatically, handles multi-turn dialogues, and resolves tier-1 tickets with human-level empathy.',
         'metrics' => '78% First Contact Resolution',
         'capabilities' => ['Omnichannel (Web, WhatsApp, Slack)', 'Context Memory & Knowledge Sync', 'Smart Human Agent Handover'],
-        'sample_prompt' => '“How do I upgrade my team plan and invite 5 new engineers?”',
-        'sample_response' => '“You can upgrade directly in Billing Settings. I have generated an upgrade preview link and staged 5 team invites for you!”'
+        'sample_prompt' => 'How do I upgrade my team plan and invite 5 new engineers?',
+        'sample_response' => 'You can upgrade directly in Billing Settings. I have generated an upgrade preview link and staged 5 team invites for you!',
+        'quick_prompts' => [
+            'Upgrade team plan',
+            'Reset client password',
+            'API rate limit status'
+        ]
     ],
     [
         'id' => 'sales-agent',
@@ -139,8 +144,13 @@ $aiAgentsData = [
         'description' => 'Qualifies leads, responds in real-time, scores intent, and follows up with prospective clients to accelerate deal velocity.',
         'metrics' => '3.4x Pipeline Conversion',
         'capabilities' => ['B2B Lead Enrichment', 'Personalized Email Pitching', 'CRM Automatic Sync (Salesforce/HubSpot)'],
-        'sample_prompt' => '“We are a 200-person logistics firm looking for a mobile app.”',
-        'sample_response' => '“Great! Based on your logistics focus, our Enterprise Cross-Platform squad is ideal. Would 10:30 AM tomorrow suit for a live demo?”'
+        'sample_prompt' => 'We are a 200-person logistics firm looking for a mobile app.',
+        'sample_response' => 'Great! Based on your logistics focus, our Enterprise Cross-Platform squad is ideal. Would 10:30 AM tomorrow suit for a live demo?',
+        'quick_prompts' => [
+            'Request mobile app quote',
+            'Book enterprise demo',
+            'Check tech stack fit'
+        ]
     ],
     [
         'id' => 'booking-agent',
@@ -149,8 +159,13 @@ $aiAgentsData = [
         'description' => 'Handles appointments, scheduling, timezone conversions, cancellations, and reschedules without any manual coordinator friction.',
         'metrics' => 'Zero Double-Bookings',
         'capabilities' => ['Google/Outlook Calendar Integration', 'Timezone Detection', 'SMS/WhatsApp Confirmations'],
-        'sample_prompt' => '“Can I book a consultation call with your AI lead this Thursday?”',
-        'sample_response' => '“Thursday at 2:00 PM BST is open. I’ve held this slot and sent calendar invitations with Google Meet details.”'
+        'sample_prompt' => 'Can I book a consultation call with your AI lead this Thursday?',
+        'sample_response' => 'Thursday at 2:00 PM BST is open. I’ve held this slot and sent calendar invitations with Google Meet details.',
+        'quick_prompts' => [
+            'Book call for Thursday 2 PM',
+            'Reschedule my meeting',
+            'Timezone London/NYC'
+        ]
     ],
     [
         'id' => 'business-agent',
@@ -159,8 +174,13 @@ $aiAgentsData = [
         'description' => 'Automates internal business workflows across ERPs, spreadsheets, HR tools, and communication channels seamlessly.',
         'metrics' => '20+ Hours Saved / Week / Dept',
         'capabilities' => ['Multi-tool Function Calling', 'Approval Routing', 'Cross-System State Sync'],
-        'sample_prompt' => '“Process invoice #4902 and verify purchase order matching.”',
-        'sample_response' => '“Invoice #4902 verified against PO-1188. Discrepancy is 0.00%. Approved and routed to accounts payable.”'
+        'sample_prompt' => 'Process invoice #4902 and verify purchase order matching.',
+        'sample_response' => 'Invoice #4902 verified against PO-1188. Discrepancy is 0.00%. Approved and routed to accounts payable.',
+        'quick_prompts' => [
+            'Process invoice #4902',
+            'Weekly sprint summary',
+            'Sync CRM to ERP'
+        ]
     ],
     [
         'id' => 'data-agent',
@@ -169,8 +189,13 @@ $aiAgentsData = [
         'description' => 'Analyses business information, queries databases in natural language, spots anomalies, and generates actionable executive insights.',
         'metrics' => 'Real-Time SQL & BI Synthesis',
         'capabilities' => ['Natural Language SQL Querying', 'Anomaly Detection Alerts', 'Executive Visual Summaries'],
-        'sample_prompt' => '“Which customer segment had the highest churn risk this quarter?”',
-        'sample_response' => '“Mid-tier SaaS accounts with under 3 active weekly logins showed 14.2% risk. I have flagged 18 accounts for account managers.”'
+        'sample_prompt' => 'Which customer segment had the highest churn risk this quarter?',
+        'sample_response' => 'Mid-tier SaaS accounts with under 3 active weekly logins showed 14.2% risk. I have flagged 18 accounts for account managers.',
+        'quick_prompts' => [
+            'Highest churn risk segment',
+            'Calculate Q3 MRR growth',
+            'Spot database anomaly'
+        ]
     ],
     [
         'id' => 'custom-agent',
@@ -179,8 +204,13 @@ $aiAgentsData = [
         'description' => 'Built specifically around the unique workflows, proprietary data models, and specialized operational requirements of your enterprise.',
         'metrics' => 'Bespoke Logic & Guardrails',
         'capabilities' => ['Fine-Tuned Domain LLMs', 'Private On-Prem / VPC Deployment', 'SOC2 / GDPR Strict Compliance'],
-        'sample_prompt' => '“Deploy custom workflow matching our internal underwriting model.”',
-        'sample_response' => '“Custom agent instantiated with private RAG pipeline, strict JSON output schema, and audit logging enabled.”'
+        'sample_prompt' => 'Deploy custom workflow matching our internal underwriting model.',
+        'sample_response' => 'Custom agent instantiated with private RAG pipeline, strict JSON output schema, and audit logging enabled.',
+        'quick_prompts' => [
+            'Deploy underwriting agent',
+            'Verify GDPR guardrails',
+            'Connect private vector RAG'
+        ]
     ]
 ];
 

@@ -99,46 +99,85 @@ require_once __DIR__ . '/includes/header.php';
                data-agent-title="<?php echo htmlspecialchars($agent['title']); ?>"
                data-agent-badge="<?php echo htmlspecialchars($agent['badge']); ?>"
                data-agent-prompt="<?php echo htmlspecialchars($agent['sample_prompt']); ?>"
-               data-agent-response="<?php echo htmlspecialchars($agent['sample_response']); ?>">
+               data-agent-response="<?php echo htmlspecialchars($agent['sample_response']); ?>"
+               data-agent-chips='<?php echo json_encode($agent['quick_prompts'] ?? []); ?>'>
             <div class="agent-header">
               <span class="agent-badge-pill"><?php echo htmlspecialchars($agent['badge']); ?></span>
               <h3 class="agent-title"><?php echo htmlspecialchars($agent['title']); ?></h3>
               <p class="agent-desc"><?php echo htmlspecialchars($agent['description']); ?></p>
-              <div class="agent-metrics-tag">⚡ <?php echo htmlspecialchars($agent['metrics']); ?></div>
+              <div class="agent-metrics-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span><?php echo htmlspecialchars($agent['metrics']); ?></span>
+              </div>
             </div>
-            <span style="font-size: 0.8rem; color: var(--accent-cyan); font-weight:600;">Click to load simulation →</span>
+
+            <div class="agent-card-actions">
+              <button type="button" class="btn-test-simulation" data-test-agent title="Test simulation in terminal">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>Test Simulation</span>
+              </button>
+              <button type="button" class="btn-build-agent" data-open-modal="consultation-modal" data-agent-select="<?php echo htmlspecialchars($agent['title']); ?>" title="Consult on building this agent">
+                <span>Build Agent ↗</span>
+              </button>
+            </div>
           </div>
         <?php endforeach; ?>
       </div>
 
-      <div class="agent-sandbox-wrapper" style="margin-top: 36px;">
+      <div class="agent-sandbox-wrapper" id="agent-sandbox" style="margin-top: 36px;">
         <div class="sandbox-header">
           <div>
-            <span style="font-size:0.75rem; color:#c084fc; text-transform:uppercase; font-weight:700;">Simulated Agent Terminal</span>
-            <h3 id="sandbox-agent-title" style="font-size:1.4rem; margin-top:2px;">Customer Support Agent</h3>
+            <span style="font-size:0.75rem; color:var(--accent-purple); text-transform:uppercase; font-weight:700; letter-spacing:0.06em;">Interactive AI Terminal</span>
+            <h3 id="sandbox-agent-title" style="font-size:1.4rem; color:var(--text-dark); margin-top:2px;">Customer Support Agent</h3>
           </div>
-          <div class="agent-badge-pill" id="sandbox-agent-badge" style="margin-bottom:0;">Instant 24/7 Resolution</div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="display:inline-flex; align-items:center; gap:5px; font-size:0.75rem; font-weight:700; color:#059669; background:rgba(5,150,105,0.1); padding:4px 10px; border-radius:20px; border:1px solid rgba(5,150,105,0.25);">
+              <span style="width:6px; height:6px; border-radius:50%; background:#059669; box-shadow:0 0 6px #059669;"></span>
+              Live & Grounded
+            </span>
+            <div class="agent-badge-pill" id="sandbox-agent-badge" style="margin-bottom:0;">Instant 24/7 Resolution</div>
+          </div>
         </div>
 
-        <div class="sandbox-chat-box" id="sandbox-chat-box">
-          <div class="chat-bubble user">
-            <div style="font-size:0.75rem; color: #94a3b8; margin-bottom: 4px; font-weight: 600;">Customer / User Input</div>
-            “How do I upgrade my team plan and invite 5 new engineers?”
-          </div>
-          <div class="chat-bubble agent">
-            <div style="font-size:0.75rem; color: #00f0ff; margin-bottom: 4px; font-weight: 600;">
-              <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#00f0ff; margin-right:4px;"></span>
-              Customer Support Agent (Active Agent)
-            </div>
-            “You can upgrade directly in Billing Settings. I have generated an upgrade preview link and staged 5 team invites for you!”
+        <!-- Quick Test Prompt Chips -->
+        <div class="sandbox-chips-wrapper" id="sandbox-chips-wrapper">
+          <span class="sandbox-chips-label">Quick Prompts:</span>
+          <div class="sandbox-chips-list" id="sandbox-chips-list">
+            <button type="button" class="sandbox-chip" data-chip-prompt="How do I upgrade my team plan and invite 5 new engineers?">Upgrade team plan</button>
+            <button type="button" class="sandbox-chip" data-chip-prompt="How do I reset my client API authentication password?">Reset client password</button>
+            <button type="button" class="sandbox-chip" data-chip-prompt="What is our current API rate limit and consumption status?">API rate limit status</button>
           </div>
         </div>
+
+        <!-- Live Chat Stream Box -->
+        <div class="sandbox-chat-box" id="sandbox-chat-box">
+          <div class="chat-bubble user">
+            <div style="font-size:0.75rem; color: var(--text-muted); margin-bottom: 4px; font-weight: 600;">Customer / User Input</div>
+            How do I upgrade my team plan and invite 5 new engineers?
+          </div>
+          <div class="chat-bubble agent">
+            <div style="font-size:0.75rem; color: var(--accent-cyan); margin-bottom: 4px; font-weight: 700; display:flex; align-items:center; gap:6px;">
+              <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent-cyan);"></span>
+              Customer Support Agent (Active Agent)
+            </div>
+            You can upgrade directly in Billing Settings. I have generated an upgrade preview link and staged 5 team invites for you!
+          </div>
+        </div>
+
+        <!-- Custom Query Input Tester Form -->
+        <form id="sandbox-prompt-form" class="sandbox-input-form">
+          <input type="text" id="sandbox-user-input" class="sandbox-input" placeholder="Type a custom query or instruction for this agent..." required>
+          <button type="submit" class="btn btn-primary btn-sm sandbox-submit-btn">
+            <span>Test Query</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+        </form>
 
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
           <span style="font-size: 0.85rem; color: var(--text-muted);">
             ⚡ Grounded in private enterprise RAG with SOC2-grade security guardrails
           </span>
-          <button type="button" class="btn btn-primary" data-open-modal="consultation-modal">
+          <button type="button" class="btn btn-primary btn-sm" data-open-modal="consultation-modal">
             Build This Agent For My Business
           </button>
         </div>
