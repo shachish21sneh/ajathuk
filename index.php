@@ -388,20 +388,20 @@ require_once __DIR__ . '/includes/header.php';
         <div class="agent-sandbox-wrapper">
           <div class="sandbox-header">
             <div>
-              <span style="font-size:0.75rem; color:#c084fc; text-transform:uppercase; font-weight:700; letter-spacing:0.06em;">Live Agent Sandbox</span>
-              <h3 id="sandbox-agent-title" style="font-size:1.4rem; margin-top:2px;">Customer Support Agent</h3>
+              <span style="font-size:0.75rem; color:var(--accent-purple); text-transform:uppercase; font-weight:700; letter-spacing:0.06em;">Live Agent Sandbox</span>
+              <h3 id="sandbox-agent-title" style="font-size:1.4rem; color:var(--text-dark); margin-top:2px;">Customer Support Agent</h3>
             </div>
             <div class="agent-badge-pill" id="sandbox-agent-badge" style="margin-bottom:0;">Instant 24/7 Resolution</div>
           </div>
 
           <div class="sandbox-chat-box" id="sandbox-chat-box">
             <div class="chat-bubble user">
-              <div style="font-size:0.75rem; color: #94a3b8; margin-bottom: 4px; font-weight: 600;">Customer / User Input</div>
+              <div style="font-size:0.75rem; color: var(--text-muted); margin-bottom: 4px; font-weight: 600;">Customer / User Input</div>
               “How do I upgrade my team plan and invite 5 new engineers?”
             </div>
             <div class="chat-bubble agent">
-              <div style="font-size:0.75rem; color: #00f0ff; margin-bottom: 4px; font-weight: 600;">
-                <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#00f0ff; margin-right:4px;"></span>
+              <div style="font-size:0.75rem; color: var(--accent-cyan); margin-bottom: 4px; font-weight: 700; display:flex; align-items:center; gap:6px;">
+                <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent-cyan);"></span>
                 Customer Support Agent (Active Agent)
               </div>
               “You can upgrade directly in Billing Settings. I have generated an upgrade preview link and staged 5 team invites for you!”
@@ -516,23 +516,26 @@ require_once __DIR__ . '/includes/header.php';
               <div class="phone-island"></div>
               <div class="phone-screen">
                 <div class="mock-app-header">
-                  <div style="font-weight:700; font-size:0.85rem; color:#fff;">Wheely Chauffeur</div>
-                  <div style="width:8px; height:8px; border-radius:50%; background:#d4af37;"></div>
+                  <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Wheely Chauffeur</div>
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <span style="font-size:0.7rem; font-weight:700; color:#b45309; background:rgba(245,158,11,0.15); padding:2px 6px; border-radius:6px;">ACTIVE</span>
+                    <div style="width:8px; height:8px; border-radius:50%; background:#d97706;"></div>
+                  </div>
                 </div>
                 <div class="mock-app-body">
-                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(0,0,0,0.5)); border-color: rgba(212,175,55,0.4);">
-                    <div style="font-size:0.75rem; color:#fef08a; font-weight:600;">Executive Ride Active</div>
-                    <div style="font-size:1.3rem; font-weight:800; color:#fff;">Mayfair, London W1</div>
-                    <div style="font-size:0.72rem; color:#94a3b8;">Mercedes E-Class • Chauffeur Arthur</div>
+                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(217,119,6,0.06)); border-color: rgba(217,119,6,0.25);">
+                    <div style="font-size:0.75rem; color:#b45309; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;">Executive Ride Active</div>
+                    <div style="font-size:1.25rem; font-weight:800; color:#0f172a; margin: 2px 0;">Mayfair, London W1</div>
+                    <div style="font-size:0.76rem; color:#475569; font-weight:500;">Mercedes E-Class • Chauffeur Arthur</div>
                   </div>
-                  <div class="mock-card">
-                    <div style="font-size:0.75rem; color:#cbd5e1; font-weight:600; margin-bottom:4px;">Sub-30s Dispatch</div>
-                    <div style="font-size:0.72rem; color:#94a3b8;">Flight BA-1492 synced. Chauffeur staged at Heathrow Terminal 5.</div>
+                  <div class="mock-card" style="background: #f8fafc; border-color: #e2e8f0;">
+                    <div style="font-size:0.75rem; color:#0f172a; font-weight:700; margin-bottom:4px;">Sub-30s Dispatch</div>
+                    <div style="font-size:0.76rem; color:#475569; line-height:1.45;">Flight BA-1492 synced. Chauffeur staged at Heathrow Terminal 5.</div>
                   </div>
-                  <div class="mock-card" style="background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.25);">
-                    <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:#fde047; font-weight:600;">
-                      <span>500K+ Completed Rides</span>
-                      <span>4.9★ Rated</span>
+                  <div class="mock-card" style="background: rgba(245,158,11,0.08); border-color: rgba(245,158,11,0.25);">
+                    <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:700;">
+                      <span style="color:#92400e;">500K+ Completed Rides</span>
+                      <span style="color:#b45309;">4.9★ Rated</span>
                     </div>
                   </div>
                 </div>
@@ -548,24 +551,24 @@ require_once __DIR__ . '/includes/header.php';
               <div class="phone-island"></div>
               <div class="phone-screen">
                 <div class="mock-app-header">
-                  <div style="font-weight:700; font-size:0.85rem; color:#fff;">Neo Stox Pro</div>
-                  <div style="font-size:0.75rem; color:#10b981; font-weight:700;">LIVE FEED</div>
+                  <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Neo Stox Pro</div>
+                  <div style="font-size:0.72rem; color:#047857; background:rgba(5,150,105,0.12); padding:2px 8px; border-radius:10px; font-weight:800; letter-spacing:0.04em;">LIVE FEED</div>
                 </div>
                 <div class="mock-app-body">
-                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(6,182,212,0.15)); border-color: rgba(16,185,129,0.4);">
-                    <div style="font-size:0.75rem; color:#a7f3d0; font-weight:600;">Portfolio Equity (P&L)</div>
-                    <div style="font-size:1.6rem; font-weight:800; color:#fff;">+28.4%</div>
-                    <div style="font-size:0.72rem; color:#34d399;">Sub-100ms WebSocket Order Depth</div>
+                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(5,150,105,0.12), rgba(2,132,199,0.08)); border-color: rgba(5,150,105,0.25);">
+                    <div style="font-size:0.75rem; color:#047857; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;">Portfolio Equity (P&L)</div>
+                    <div style="font-size:1.5rem; font-weight:900; color:#059669; margin: 2px 0;">+28.4%</div>
+                    <div style="font-size:0.76rem; color:#0f766e; font-weight:600;">Sub-100ms WebSocket Order Depth</div>
                   </div>
-                  <div class="mock-card">
-                    <div style="font-size:0.75rem; color:#cbd5e1; font-weight:600; margin-bottom:6px;">TradingView Charts</div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:#94a3b8;">
-                      <span>SPX 4700 Call Option</span>
-                      <span style="color:#10b981; font-weight:600;">$14.80 (+8.2%)</span>
+                  <div class="mock-card" style="background: #f8fafc; border-color: #e2e8f0;">
+                    <div style="font-size:0.75rem; color:#0f172a; font-weight:700; margin-bottom:6px;">TradingView Charts</div>
+                    <div style="display:flex; justify-content:space-between; font-size:0.76rem;">
+                      <span style="color:#334155; font-weight:600;">SPX 4700 Call Option</span>
+                      <span style="color:#059669; font-weight:800;">$14.80 (+8.2%)</span>
                     </div>
                   </div>
-                  <div class="mock-card">
-                    <div style="font-size:0.72rem; color:#38bdf8; font-weight:600;">750K+ Active Market Traders</div>
+                  <div class="mock-card" style="background: rgba(2,132,199,0.08); border-color: rgba(2,132,199,0.2);">
+                    <div style="font-size:0.75rem; color:#0284c7; font-weight:700; text-align:center;">750K+ Active Market Traders</div>
                   </div>
                 </div>
               </div>
@@ -580,23 +583,23 @@ require_once __DIR__ . '/includes/header.php';
               <div class="phone-island"></div>
               <div class="phone-screen">
                 <div class="mock-app-header">
-                  <div style="font-weight:700; font-size:0.85rem; color:#fff;">Easy Food</div>
-                  <div style="font-size:0.75rem; color:#f97316; font-weight:700;">ON ROUTE</div>
+                  <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Easy Food</div>
+                  <div style="font-size:0.72rem; color:#c2410c; background:rgba(234,88,12,0.12); padding:2px 8px; border-radius:10px; font-weight:800; letter-spacing:0.04em;">ON ROUTE</div>
                 </div>
                 <div class="mock-app-body">
-                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(249,115,22,0.18), rgba(0,0,0,0.4)); border-color: rgba(249,115,22,0.35);">
-                    <div style="font-size:0.75rem; color:#fdba74; font-weight:600;">Courier Tracking</div>
-                    <div style="font-size:1.1rem; font-weight:800; color:#fff;">ETA: 12 Mins</div>
-                    <div style="font-size:0.72rem; color:#cbd5e1;">Artisan Neapolitan Pizza & Bowls</div>
+                  <div class="mock-card" style="background: linear-gradient(135deg, rgba(234,88,12,0.12), rgba(245,158,11,0.06)); border-color: rgba(234,88,12,0.25);">
+                    <div style="font-size:0.75rem; color:#c2410c; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;">Courier Tracking</div>
+                    <div style="font-size:1.25rem; font-weight:900; color:#0f172a; margin: 2px 0;">ETA: 12 Mins</div>
+                    <div style="font-size:0.76rem; color:#475569; font-weight:500;">Artisan Neapolitan Pizza & Bowls</div>
                   </div>
-                  <div class="mock-card">
-                    <div style="font-size:0.75rem; color:#cbd5e1; font-weight:600; margin-bottom:4px;">Smart Dispatch Engine</div>
-                    <div style="font-size:0.72rem; color:#94a3b8;">Batch routing reduced delivery window by 35%.</div>
+                  <div class="mock-card" style="background: #f8fafc; border-color: #e2e8f0;">
+                    <div style="font-size:0.75rem; color:#0f172a; font-weight:700; margin-bottom:4px;">Smart Dispatch Engine</div>
+                    <div style="font-size:0.76rem; color:#475569; line-height:1.45;">Batch routing reduced delivery window by 35%.</div>
                   </div>
-                  <div class="mock-card">
-                    <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:#cbd5e1;">
-                      <span>Delivered Orders</span>
-                      <span style="color:#f97316; font-weight:700;">1.2M+ Orders</span>
+                  <div class="mock-card" style="background: rgba(234,88,12,0.08); border-color: rgba(234,88,12,0.2);">
+                    <div style="display:flex; justify-content:space-between; font-size:0.75rem;">
+                      <span style="color:#334155; font-weight:600;">Delivered Orders</span>
+                      <span style="color:#ea580c; font-weight:800;">1.2M+ Orders</span>
                     </div>
                   </div>
                 </div>
