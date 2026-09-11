@@ -908,6 +908,54 @@ require_once __DIR__ . '/includes/header.php';
             </form>
           </div>
         </div>
+
+        <!-- Global Tech Hubs & Presence -->
+        <div style="margin-top: 60px;">
+          <div class="section-header" style="text-align: center; margin-bottom: 36px;">
+            <div class="section-badge">Global Presence</div>
+            <h3 style="font-size: 2rem; color: var(--text-dark); margin-bottom: 10px;">Our International Offices</h3>
+            <p>Operating across 4 key tech hubs in the UK, USA, Dubai UAE, and India to deliver 24/7 engineering velocity.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+            <?php foreach (GLOBAL_OFFICES as $key => $office): ?>
+              <div class="glass-card office-card" style="padding: 0; display: flex; flex-direction: column; overflow: hidden; border-radius: var(--radius-lg);">
+                <div class="office-card-img-wrap">
+                  <img src="<?php echo htmlspecialchars($office['image']); ?>" alt="<?php echo htmlspecialchars($office['country'] . ' ' . $office['role']); ?>" class="office-card-img" loading="lazy" width="400" height="225">
+                  <div class="office-card-badge-overlay">
+                    <span style="font-size: 1.4rem; line-height: 1;"><?php echo $office['flag']; ?></span>
+                    <span class="tech-badge-item" style="font-size: 0.75rem; padding: 3px 10px;"><?php echo htmlspecialchars($office['role']); ?></span>
+                  </div>
+                </div>
+
+                <div class="office-card-body" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+                  <div>
+                    <h4 style="font-size: 1.25rem; color: var(--text-dark); margin-bottom: 8px;"><?php echo htmlspecialchars($office['country']); ?></h4>
+                    <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 18px;">
+                      <?php echo htmlspecialchars($office['address']); ?>
+                    </p>
+                  </div>
+                  <div style="padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 8px;">
+                    <div style="font-size: 0.88rem;">
+                      <span style="color: var(--text-muted);">Email: </span>
+                      <a href="mailto:<?php echo htmlspecialchars($office['email']); ?>" style="color: var(--accent-cyan); font-weight: 600;"><?php echo htmlspecialchars($office['email']); ?></a>
+                    </div>
+                    <div style="font-size: 0.88rem;">
+                      <span style="color: var(--text-muted);">Phone: </span>
+                      <a href="tel:<?php echo htmlspecialchars($office['phone_raw']); ?>" style="color: var(--text-dark); font-weight: 600;"><?php echo htmlspecialchars($office['phone']); ?></a>
+                    </div>
+                    <div style="font-size: 0.88rem; margin-top: 4px;">
+                      <a href="<?php echo htmlspecialchars($office['website']); ?>" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                        <span>Visit <?php echo parse_url($office['website'], PHP_URL_HOST) ?? $office['website']; ?></span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
       </div>
     </section>
   </main>

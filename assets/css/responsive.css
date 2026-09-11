@@ -309,6 +309,27 @@
   body {
     padding-bottom: 74px; /* offset for sticky cta bar */
   }
+
+  /* Position WhatsApp widget above the mobile sticky bar */
+  .whatsapp-widget-container {
+    bottom: 84px;
+    right: 16px;
+  }
+
+  .whatsapp-fab-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-fab-tooltip {
+    display: none !important;
+  }
+
+  .whatsapp-chat-popup {
+    bottom: 64px;
+    right: 0;
+    width: calc(100vw - 32px);
+  }
 }
 
 /* Hide Sticky Bottom Bar on Desktop/Tablet */

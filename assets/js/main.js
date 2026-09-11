@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolioFilters();
   initEnquiryForms();
   initModals();
+  initWhatsAppWidget();
 });
 
 // -----------------------------------------------------------------------------
@@ -314,4 +315,59 @@ function showToast(message, type = 'success') {
     toast.style.transition = 'opacity 0.3s ease';
     setTimeout(() => toast.remove(), 300);
   }, 4000);
+}
+
+// -----------------------------------------------------------------------------
+// 7. WhatsApp Floating Widget Logic
+// -----------------------------------------------------------------------------
+function initWhatsAppWidget() {
+  const fabBtn = document.getElementById('whatsapp-fab-btn');
+  const popup = document.getElementById('whatsapp-chat-popup');
+  const closeBtn = document.getElementById('whatsapp-close-btn');
+  const tooltip = document.getElementById('whatsapp-fab-tooltip');
+
+  if (!fabBtn || !popup) return;
+
+  function togglePopup() {
+    const isOpen = popup.classList.contains('active');
+    if (isOpen) {
+      popup.classList.remove('active');
+    } else {
+      popup.classList.add('active');
+      if (tooltip) tooltip.classList.add('hidden');
+    }
+  }
+
+  fabBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    togglePopup();
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      popup.classList.remove('active');
+    });
+  }
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (popup.classList.contains('active') && !popup.contains(e.target) && !fabBtn.contains(e.target)) {
+      popup.classList.remove('active');
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup.classList.contains('active')) {
+      popup.classList.remove('active');
+    }
+  });
+
+  // Hide tooltip after 8 seconds if not clicked
+  if (tooltip) {
+    setTimeout(() => {
+      tooltip.classList.add('hidden');
+    }, 8000);
+  }
 }
